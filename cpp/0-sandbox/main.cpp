@@ -1,18 +1,12 @@
 #include <iostream>
-#include <vector>
+#include <string>
+#include "test.h"
 
 using namespace std;
 
-auto printVector(vector<int> vector)
-{
-  for (int number : vector)
-    cout << number << " ";
-  cout << endl;
-}
-
 int main(int argc, char const *argv[])
 {
-  vector<int> vec = {1, 2, 3, 4, 5};
-  printVector(vec);
+  int a;
+  cout << a << endl;
   return 0;
 }
