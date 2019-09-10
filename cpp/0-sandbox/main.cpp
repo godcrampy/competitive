@@ -1,17 +1,16 @@
 #include <iostream>
+#include <vector>
 #include "test.h"
 #include <string>
 #include <algorithm>
 
-auto print_string(std::string string)
-{
-  std::cout << string << std::endl;
-}
-
 int main(int argc, char const *argv[])
 {
-  std::string name = "sahil";
-  std::sort(name.begin(), name.end());
-  print_string(name);
+  int *sizes = new int[3];
+  *(sizes) = 1;
+  *(sizes + 1) = 2;
+  *(sizes + 2) = 3;
+  print_pointer(sizes, 3);
+  delete sizes;
   return 0;
 }

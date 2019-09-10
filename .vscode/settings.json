@@ -43,6 +43,7 @@
     "fstream": "cpp",
     "limits": "cpp",
     "sstream": "cpp",
-    "typeinfo": "cpp"
+    "typeinfo": "cpp",
+    "cstring": "cpp"
   }
 }
