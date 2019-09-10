@@ -1,12 +1,17 @@
 #include <iostream>
-#include <string>
 #include "test.h"
+#include <string>
+#include <algorithm>
 
-using namespace std;
+auto print_string(std::string string)
+{
+  std::cout << string << std::endl;
+}
 
 int main(int argc, char const *argv[])
 {
-  int a;
-  cout << a << endl;
+  std::string name = "sahil";
+  std::sort(name.begin(), name.end());
+  print_string(name);
   return 0;
 }
