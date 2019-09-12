@@ -1,15 +1,26 @@
 #include <iostream>
-#include "Account.hpp"
+#include "Player.h"
+
+void fun_foo(Player player)
+{
+  // do nothing!
+}
 
 int main(int argc, char const *argv[])
 {
-  Account sahil;
-  std::cout << sahil.get_name() << std::endl;
-  sahil.set_name("Sahil Bondre");
-  std::cout << sahil.get_name() << std::endl;
-  sahil.deposit(1000);
-  sahil.withdraw(500);
-  sahil.deposit(100000);
-  sahil.withdraw(1000);
+  Player mario("Mario");
+  mario.print_player();
+
+  Player samuel_umtiti("Umtiti");
+  samuel_umtiti.print_player();
+
+  Player messi("Messi", 1000, 45);
+  messi.print_player();
+
+  Player ronaldo(messi);
+  ronaldo.print_player();
+
+  fun_foo(samuel_umtiti);
+
   return 0;
 }

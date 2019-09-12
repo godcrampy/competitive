@@ -1,16 +1,15 @@
 #include <iostream>
-#include <vector>
-#include "test.h"
-#include <string>
-#include <algorithm>
-
+#include "ComplexNumber.hpp"
+ComplexNumber  addNumber(ComplexNumber a, ComplexNumber b){
+  return ComplexNumber(a.real + b.real, a.complex + b.complex);
+}
 int main(int argc, char const *argv[])
 {
-  int *sizes = new int[3];
-  *(sizes) = 1;
-  *(sizes + 1) = 2;
-  *(sizes + 2) = 3;
-  print_pointer(sizes, 3);
-  delete sizes;
+  ComplexNumber a(1, 4);
+  ComplexNumber b(4, 6);
+  a.print_number();
+  b.print_number();
+  ComplexNumber c = addNumber(a, b);
+  c.print_number();
   return 0;
 }
