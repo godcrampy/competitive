@@ -9,9 +9,10 @@ class BigInteger
 private:
   std::string string;
   std::vector<int> number;
+  int size;
 
 public:
-  BigInteger(std::string = "");
+  BigInteger(std::string = "", int = 200);
   std::string get_string() { return this->string; }
   std::vector<int> get_number() { return this->number; }
   void set_string(std::string);
@@ -23,7 +24,7 @@ public:
   BigInteger operator/(const int integer);
 };
 
-BigInteger::BigInteger(std::string string) : string{string}, number{std::vector<int>(100, 0)}
+BigInteger::BigInteger(std::string string, int size) : string{string}, number{std::vector<int>(size, 0)}, size{size}
 {
   this->string_to_integer();
 }
@@ -36,7 +37,7 @@ void BigInteger::set_string(std::string string)
 int BigInteger::get_MSB_position()
 {
   int first_place = 0;
-  for (int i = 0; i < 100; i++)
+  for (int i = 0; i < this->size; i++)
     if (this->number.at(i) != 0)
       first_place = i;
   return first_place;
@@ -47,9 +48,7 @@ void BigInteger::string_to_integer()
   // works
   int length_of_string = this->string.length();
   for (int i = 0; i < length_of_string; ++i)
-  {
     this->number.at(i) = string.at(length_of_string - i - 1) - '0';
-  }
 }
 
 void BigInteger::integer_to_string()
@@ -66,7 +65,7 @@ BigInteger BigInteger::operator+(const BigInteger &object)
   // works
   BigInteger final;
   int carry = 0, sum = 0;
-  for (int i = 0; i < 100; i++)
+  for (int i = 0; i < this->size; i++)
   {
     sum = this->number.at(i) + object.number.at(i) + carry;
     final.number.at(i) = sum % 10;
@@ -82,7 +81,7 @@ BigInteger BigInteger::operator-(const BigInteger &object)
   BigInteger final;
   bool borrow = false;
   int a, b;
-  for (int i = 0; i < 100; i++)
+  for (int i = 0; i < this->size; i++)
   {
     a = this->number.at(i) - borrow;
     b = object.number.at(i);
