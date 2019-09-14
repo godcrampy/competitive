@@ -13,9 +13,10 @@
  * * large numbers in C++
  * 
  * ! Not Complete
+ * ! All Operations assume positive numbers
  * Current Implementation provides the following operations:
  * 1. BigInt ? BigInt: addition, subtraction
- * 2. BigInt ? Integer: division
+ * 2. BigInt ? Integer: addition, division
  * 
  * ? private member string will store 541 as "541",
  * ? private member number will store 541 as [1, 4, 5, 0, 0 ,...]
@@ -36,6 +37,7 @@ private:
 
 public:
   BigInteger(std::string = "", int = 200);
+  BigInteger(int, int = 200);
   std::string get_string() { return this->string; }
   std::vector<int> get_number() { return this->number; }
   void set_string(std::string);
@@ -44,12 +46,19 @@ public:
   int get_MSB_position();
   BigInteger operator+(const BigInteger &object);
   BigInteger operator-(const BigInteger &object);
-  BigInteger operator/(const int integer);
+
+  BigInteger operator+(int integer);
+  BigInteger operator-(int integer);
+  BigInteger operator/(int integer);
 };
 
 BigInteger::BigInteger(std::string string, int size) : string{string}, number{std::vector<int>(size, 0)}, size{size}
 {
   this->string_to_integer();
+}
+
+BigInteger::BigInteger(int number, int size) : BigInteger(std::to_string(number), size)
+{
 }
 
 void BigInteger::set_string(std::string string)
@@ -100,7 +109,7 @@ BigInteger BigInteger::operator+(const BigInteger &object)
 
 BigInteger BigInteger::operator-(const BigInteger &object)
 {
-  // Assumption: first number is larger than the second number
+  //! Assumption: first number is larger than the second number
   BigInteger final;
   bool borrow = false;
   int a, b;
@@ -121,7 +130,41 @@ BigInteger BigInteger::operator-(const BigInteger &object)
   return final;
 }
 
-BigInteger BigInteger::operator/(const int integer)
+BigInteger BigInteger::operator+(int integer)
+{
+  BigInteger final;
+  int carry = 0, first_place = this->size;
+  for (int i = 0; i < first_place; ++i)
+  {
+    int sum = this->number.at(i) + carry + integer % 10;
+    final.number.at(i) = sum % 10;
+    integer /= 10;
+    carry = sum / 10;
+  }
+  final.integer_to_string();
+  return final;
+}
+
+BigInteger BigInteger::operator-(int integer)
+{
+  //! Assumption: Integer is smaller than bigInt
+  BigInteger final;
+  int borrow = 0, first_place = this->size;
+  for (int i = 0; i < first_place; ++i)
+  {
+    int difference = this->number.at(i) - integer % 10 - borrow;
+    if (difference < 0)
+      borrow = 1;
+    else
+      borrow = 0;
+    final.number.at(i) = difference + 10 * borrow;
+    integer /= 10;
+  }
+  final.integer_to_string();
+  return final;
+}
+
+BigInteger BigInteger::operator/(int integer)
 {
   BigInteger final;
   int first_place = get_MSB_position(), a = 0, b = 0;
