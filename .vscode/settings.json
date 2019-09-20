@@ -45,6 +45,7 @@
     "sstream": "cpp",
     "typeinfo": "cpp",
     "cstring": "cpp",
-    "map": "cpp"
+    "map": "cpp",
+    "stack": "cpp"
   }
 }
