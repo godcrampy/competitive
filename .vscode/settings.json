@@ -46,6 +46,7 @@
     "typeinfo": "cpp",
     "cstring": "cpp",
     "map": "cpp",
-    "stack": "cpp"
+    "stack": "cpp",
+    "valarray": "cpp"
   }
 }
