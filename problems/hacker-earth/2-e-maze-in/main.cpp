@@ -1,3 +1,9 @@
+/**
+ *
+ * Basic Programming -> Input/Output -> Easy
+ *
+ */
+
 #include <iostream>
 
 int main()

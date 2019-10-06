@@ -1,47 +1,56 @@
 #include <iostream>
 #include <vector>
+#include <math.h>
+#include <climits>
 
-std::vector<long> get_prefix_sum(std::vector<long> vector)
+auto get_prefix(std::vector<long long> &array, std::vector<long long> &prefix_sum)
 {
-  long sum = 0;
-  std::vector<long> final = {0};
-  for (auto i = 0; i < vector.size(); ++i)
+  // * works
+  prefix_sum = {};
+  long long sum = 0;
+  for (auto number : array)
   {
-    sum += vector[i];
-    final.push_back(sum);
+    sum += number;
+    prefix_sum.push_back(sum);
   }
-  return final;
 }
 
-long sum(std::vector<long> prefix_sum, int start, int end)
+long number_of_allowed_charecters(long space)
 {
-  return prefix_sum[end + 1] - prefix_sum[start];
+  long final = (std::sqrt(1 + 8 * space) - 1) / 2;
+  return (final) * (final + 1) / 2;
 }
 
-int number_indices_to_consider(int space_remaining)
+long long get_prefix_sum(const std::vector<long long> &prefix, long start, long end)
 {
-  if (space_remaining < 2)
-    return space_remaining;
-  for (int i = 1; i < space_remaining; i++)
-    if ((i) * (i + 1) / 2 > space_remaining)
-      return (i) * (i - 1) / 2;
-  return space_remaining;
+  if (start == 0)
+    return prefix.at(end);
+  return prefix.at(end) - prefix.at(start - 1);
 }
 
-long special_sum(std::vector<long> &prefix_sum, int index)
+long get_special_sum(std::vector<long long> &prefix, int postion)
 {
-  int end = number_indices_to_consider(prefix_sum.size() - index - 1);
-  return sum(prefix_sum, index, index + end - 1);
+  long valid_space = number_of_allowed_charecters(prefix.size() - postion);
+  return get_prefix_sum(prefix, postion, postion + valid_space - 1);
+}
+
+long get_best_index(std::vector<long long> &prefix)
+{
+  long size = prefix.size();
+  long max = LONG_MIN;
+  for (auto i = 0; i < size; ++i)
+  {
+    long temp = get_special_sum(prefix, i);
+    if (temp > max)
+      max = temp;
+  }
+  return max;
 }
 
 int main(int argc, char const *argv[])
 {
-  int i;
-  std::vector<long> vec = {-3, 2, 3, -4, 3, 1};
-  auto pref = get_prefix_sum(vec);
-  long max = special_sum(pref, 0);
-  for (auto i = 0; i < vec.size(); ++i)
-    max = std::max(special_sum(pref, i), max);
-  std::cout << max << std::endl;
+  std::vector<long long> array = {1, 3, 1, 2, 5}, prefix;
+  get_prefix(array, prefix);
+  std::cout << get_best_index(prefix) << std::endl;
   return 0;
 }
