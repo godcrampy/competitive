@@ -1,9 +1,11 @@
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
   int t;
-  std::cin >> t;
+  cin >> t;
   for (int _ = 0; _ < t; _++)
   {
     
