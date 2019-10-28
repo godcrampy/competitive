@@ -15,11 +15,11 @@ auto max_pair_product(std::vector<long long> vector)
 auto max_pair_product_fast(std::vector<long long> vector)
 {
   int max_index_1 = 0;
-  int max_index_2 = 0;
   for (auto i = 0; i < vector.size(); ++i)
     if (vector[i] > vector[max_index_1])
       max_index_1 = i;
 
+  int max_index_2 = max_index_1 == 0 ? 1 : 0;
   for (auto i = 0; i < vector.size(); ++i)
     if (i != max_index_1 && vector[i] > vector[max_index_2])
       max_index_2 = i;
