@@ -76,7 +76,11 @@ void quick_sort(std::vector<long> &vector, int l, int r)
 
 int main(int argc, char const *argv[])
 {
-  std::vector<long> test = {5, 4, 6, 3, 1, 4};
+  int n;
+  std::cin >> n;
+  std::vector<long> test(n, 0);
+  for (auto i = 0; i < n; ++i)
+    std::cin >> test[i];
   fast_quick_sort(test, 0, test.size() - 1);
   for (auto number : test)
     std::cout << number << " ";
