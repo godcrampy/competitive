@@ -3,35 +3,37 @@
 
 long merge(std::vector<long> &vector, int l, int m, int r)
 {
-  auto temp = vector;
+  std::vector<int> temp(r - l + 1, 0);
+  for (auto i = l; i <= r; ++i)
+    temp[i - l] = vector[i];
   long count = 0;
   int iterator1 = l;
   int iterator2 = m + 1;
   int iterator = l;
   while (iterator1 != m + 1 && iterator2 != r + 1)
   {
-    if (temp[iterator1] > temp[iterator2])
+    if (temp[iterator1 - l] > temp[iterator2 - l])
     {
       count += (m - iterator1 + 1);
-      vector[iterator] = temp[iterator2];
+      vector[iterator] = temp[iterator2 - l];
       ++iterator2;
     }
     else
     {
-      vector[iterator] = temp[iterator1];
+      vector[iterator] = temp[iterator1 - l];
       ++iterator1;
     }
     ++iterator;
   }
   while (iterator1 != m + 1)
   {
-    vector[iterator] = temp[iterator1];
+    vector[iterator] = temp[iterator1 - l];
     ++iterator1;
     ++iterator;
   }
   while (iterator2 != r + 1)
   {
-    vector[iterator] = temp[iterator2];
+    vector[iterator] = temp[iterator2 - l];
     ++iterator2;
     ++iterator;
   }
