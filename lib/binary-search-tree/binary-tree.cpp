@@ -24,6 +24,8 @@ node* search_parent_node(node* root, int data);
 int _number_of_children(node* node);
 node* _smallest_child(node* node);
 void delete_node(node* node, int data);
+int distance_from_root(node* root, int data);
+bool are_siblings(node* root, int a, int b);
 
 int main(int argc, char const* argv[]) {
   node* root = new node;
@@ -38,10 +40,7 @@ int main(int argc, char const* argv[]) {
   insert(root, 2);
   insert(root, 7);
 
-  inorder_iterative(root);
-  delete_node(root, 3);
-  inorder_iterative(root);
-
+  cout << are_siblings(root, 1, 8) << " " << are_siblings(root, 3, 8) << endl;
   return 0;
 }
 
@@ -225,4 +224,21 @@ void delete_node(node* root, int data) {
       delete_node(root, hier->data);
       del->data = hier->data;
   }
+}
+
+int distance_from_root(node* root, int data) {
+  if (data > root->data) {
+    return 1 + distance_from_root(root->right, data);
+  }
+  if (data < root->data) {
+    return 1 + distance_from_root(root->left, data);
+  }
+  return 0;
+}
+
+bool are_siblings(node* root, int a, int b) {
+  if (distance_from_root(root, a) == distance_from_root(root, b) && search_parent_node(root, a) == search_parent_node(root, b)) {
+    return true;
+  }
+  return false;
 }
