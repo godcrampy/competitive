@@ -18,6 +18,13 @@ void inorder_iterative(node* root);
 void preorder_iterative(node* root);
 void postorder_iterative(node* root);
 
+void delete_node(node* root, int data);
+node* search_node(node* root, int data);
+node* search_parent_node(node* root, int data);
+int _number_of_children(node* node);
+node* _smallest_child(node* node);
+void delete_node(node* node, int data);
+
 int main(int argc, char const* argv[]) {
   node* root = new node;
   root->data = 5;
@@ -31,17 +38,10 @@ int main(int argc, char const* argv[]) {
   insert(root, 2);
   insert(root, 7);
 
-  inorder_recursive(root);
-  cout << endl;
+  inorder_iterative(root);
+  delete_node(root, 3);
   inorder_iterative(root);
 
-  preorder_recursive(root);
-  cout << endl;
-  preorder_iterative(root);
-
-  postorder_recursive(root);
-  cout << endl;
-  postorder_iterative(root);
   return 0;
 }
 
@@ -143,4 +143,86 @@ void postorder_iterative(node* root) {
     stack_2.pop();
   }
   cout << endl;
+}
+
+node* search_node(node* root, int data) {
+  if (root == NULL) {
+    return NULL;
+  }
+  if (data > root->data) {
+    return search_node(root->right, data);
+  }
+  if (data < root->data) {
+    return search_node(root->left, data);
+  }
+  // * root->data == data
+  return root;
+}
+
+node* search_parent_node(node* root, int data) {
+  if (root == NULL) {
+    return NULL;
+  }
+  if (root->left->data == data || root->right->data == data) {
+    return root;
+  }
+  if (data > root->data) {
+    return search_parent_node(root->right, data);
+  }
+  // * data < root->data
+  return search_parent_node(root->left, data);
+}
+
+int _number_of_children(node* node) {
+  int count = 0;
+  if (node->left != NULL) {
+    ++count;
+  }
+  if (node->right != NULL) {
+    ++count;
+  }
+  return count;
+}
+
+node* _smallest_child(node* node) {
+  if (node->left == NULL) {
+    return node;
+  }
+  return _smallest_child(node->left);
+}
+
+void delete_node(node* root, int data) {
+  node* del = search_node(root, data);
+  node* parent = search_parent_node(root, data);
+  bool is_left_child = parent->left->data == data ? true : false;
+  int count = _number_of_children(del);
+  switch (count) {
+    case 0:
+      if (is_left_child) {
+        parent->left = NULL;
+      } else {
+        parent->right = NULL;
+      }
+      break;
+    case 1:
+      if (is_left_child) {
+        if (del->left != NULL) {
+          parent->left = del->left;
+        } else {
+          parent->left = del->right;
+        }
+      } else {
+        if (del->right != NULL) {
+          parent->left = del->left;
+        } else {
+          parent->right = del->right;
+        }
+      }
+      break;
+    default:
+      // * 2 children
+      node* hier = _smallest_child(del->right);
+      delete_node(root, hier->data);
+      del->data = hier->data;
+  }
 }
