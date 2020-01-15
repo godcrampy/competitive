@@ -2,11 +2,9 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int input{0};
-  while (true)
-  {
+  while (true) {
     cin >> input;
     if (input == 42)
       break;

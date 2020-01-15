@@ -1,15 +1,13 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
 #include "util.hpp"
-#include <algorithm>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long number_of_stamps, number_of_friends;
   std::cin >> number_of_stamps >> number_of_friends;
   std::vector<long> stamps;
-  for (auto i = 0; i < number_of_friends; ++i)
-  {
+  for (auto i = 0; i < number_of_friends; ++i) {
     long temp;
     std::cin >> temp;
     stamps.push_back(temp);
@@ -19,12 +17,10 @@ int main(int argc, char const *argv[])
   long collection = 0;
   bool flag = false;
   int count = 0;
-  for (long number : stamps)
-  {
+  for (long number : stamps) {
     collection += number;
     ++count;
-    if (collection >= number_of_stamps)
-    {
+    if (collection >= number_of_stamps) {
       flag = true;
       break;
     }

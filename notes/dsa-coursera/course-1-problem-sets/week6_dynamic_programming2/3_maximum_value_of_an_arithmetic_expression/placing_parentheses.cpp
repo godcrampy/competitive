@@ -1,12 +1,12 @@
-#include <iostream>
 #include <cassert>
+#include <iostream>
 #include <string>
 #include <vector>
 
-using std::vector;
-using std::string;
 using std::max;
 using std::min;
+using std::string;
+using std::vector;
 
 long long eval(long long a, long long b, char op) {
   if (op == '*') {

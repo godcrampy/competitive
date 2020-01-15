@@ -3,20 +3,18 @@
 
 using namespace std;
 
-typedef struct Node
-{
+typedef struct Node {
   int data;
   struct Node *left;
   struct Node *right;
   Node(int data = 0) : data(data), left(nullptr), right(nullptr) {}
 } Node;
 
-class BST
-{
-private:
+class BST {
+ private:
   Node *root;
 
-public:
+ public:
   BST() : root(nullptr) {}
   void insert(int data);
   void inorder_traversal();
@@ -24,32 +22,24 @@ public:
   void postorder_traversal();
 };
 
-void BST::insert(int data)
-{
+void BST::insert(int data) {
   Node *node = new Node(data);
-  if (this->root == nullptr)
-  {
+  if (this->root == nullptr) {
     this->root = node;
     return;
   }
   Node *iterator = this->root;
-  while (true)
-  {
+  while (true) {
     if (iterator->data == data)
       return;
-    else if (iterator->data > data)
-    {
-      if (iterator->left == nullptr)
-      {
+    else if (iterator->data > data) {
+      if (iterator->left == nullptr) {
         iterator->left = node;
         break;
       }
       iterator = iterator->left;
-    }
-    else
-    {
-      if (iterator->right == nullptr)
-      {
+    } else {
+      if (iterator->right == nullptr) {
         iterator->right = node;
         break;
       }
@@ -58,21 +48,16 @@ void BST::insert(int data)
   }
 }
 
-void BST::inorder_traversal()
-{
+void BST::inorder_traversal() {
   if (this->root == nullptr)
     return;
   stack<Node *> stack;
   Node *iterator = this->root;
-  while (true)
-  {
-    if (iterator != nullptr)
-    {
+  while (true) {
+    if (iterator != nullptr) {
       stack.push(iterator);
       iterator = iterator->left;
-    }
-    else
-    {
+    } else {
       if (stack.empty())
         break;
       iterator = stack.top();
@@ -84,12 +69,10 @@ void BST::inorder_traversal()
   cout << endl;
 }
 
-void BST::preorder_traversal()
-{
+void BST::preorder_traversal() {
   stack<Node *> stack;
   stack.push(this->root);
-  while (!stack.empty())
-  {
+  while (!stack.empty()) {
     auto temp = stack.top();
     cout << temp->data << " ";
     stack.pop();
@@ -101,12 +84,10 @@ void BST::preorder_traversal()
   cout << endl;
 }
 
-void BST::postorder_traversal()
-{
+void BST::postorder_traversal() {
   stack<Node *> stack1, stack2;
   stack1.push(this->root);
-  while (!stack1.empty())
-  {
+  while (!stack1.empty()) {
     auto temp = stack1.top();
     stack1.pop();
     stack2.push(temp);
@@ -115,16 +96,14 @@ void BST::postorder_traversal()
     if (temp->right != nullptr)
       stack1.push(temp->right);
   }
-  while (!stack2.empty())
-  {
+  while (!stack2.empty()) {
     cout << stack2.top()->data << " ";
     stack2.pop();
   }
   cout << endl;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   BST tree;
   tree.insert(4);
   tree.insert(2);

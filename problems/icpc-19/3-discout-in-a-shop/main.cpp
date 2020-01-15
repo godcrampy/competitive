@@ -1,8 +1,7 @@
 #include <iostream>
 #include <string>
 
-void build_lowest_recursive(std::string str, std::string &res)
-{
+void build_lowest_recursive(std::string str, std::string &res) {
   int len = str.length();
   if (len <= 1)
     return;
@@ -15,20 +14,17 @@ void build_lowest_recursive(std::string str, std::string &res)
   build_lowest_recursive(new_str, res);
 }
 
-std::string build_lowest(std::string str)
-{
+std::string build_lowest(std::string str) {
   std::string res = "";
   build_lowest_recursive(str, res);
   return res;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int t;
   std::cin >> t;
   getchar();
-  for (auto _ = 0; _ < t; ++_)
-  {
+  for (auto _ = 0; _ < t; ++_) {
     std::string input;
     std::getline(std::cin, input);
     std::cout << std::stol(build_lowest(input)) << std::endl;

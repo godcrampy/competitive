@@ -9,8 +9,9 @@ def evalt(a, b, op):
     else:
         assert False
 
+
 def get_maximum_value(dataset):
-    #write your code here
+    # write your code here
     return 0
 
 

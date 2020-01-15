@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 
-std::ostream &operator<<(std::ostream &stream, std::vector<int> vector)
-{
+std::ostream &operator<<(std::ostream &stream, std::vector<int> vector) {
   stream << "[";
   for (auto item : vector)
     stream << item << ", ";
@@ -11,11 +10,9 @@ std::ostream &operator<<(std::ostream &stream, std::vector<int> vector)
   return stream;
 }
 
-std::istream &operator>>(std::istream &stream, std::vector<int> vector)
-{
+std::istream &operator>>(std::istream &stream, std::vector<int> vector) {
   int temp;
-  while (stream >> temp)
-  {
+  while (stream >> temp) {
     if (temp == 0)
       break;
     vector.push_back(temp);
@@ -23,8 +20,7 @@ std::istream &operator>>(std::istream &stream, std::vector<int> vector)
   return stream;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   std::vector<int> a = {1, 4, 5, 1, 3, 2};
   std::cin >> a;
   std::cout << a << std::endl;

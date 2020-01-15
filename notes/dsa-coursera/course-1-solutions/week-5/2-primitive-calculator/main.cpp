@@ -1,15 +1,13 @@
 #include <iostream>
-#include <vector>
 #include <stack>
+#include <vector>
 
 using namespace std;
 
-void print_min_operations_and_sequence(long n)
-{
+void print_min_operations_and_sequence(long n) {
   vector<long> table(n + 1, 0);
   // Construct table;
-  for (auto i = 2; i <= n; ++i)
-  {
+  for (auto i = 2; i <= n; ++i) {
     long a = table[i - 1];
     long b = i % 2 == 0 ? table[i / 2] : __LONG_MAX__;
     long c = i % 3 == 0 ? table[i / 3] : __LONG_MAX__;
@@ -20,8 +18,7 @@ void print_min_operations_and_sequence(long n)
   // Backtrack
   stack<long> back;
   auto iterator = n;
-  while (iterator != 0)
-  {
+  while (iterator != 0) {
     back.push(iterator);
     long a = table[iterator - 1];
     long b = iterator % 2 == 0 ? table[iterator / 2] : __LONG_MAX__;
@@ -35,16 +32,14 @@ void print_min_operations_and_sequence(long n)
       iterator /= 3;
   }
 
-  while (!back.empty())
-  {
+  while (!back.empty()) {
     cout << back.top() << " ";
     back.pop();
   }
   cout << endl;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long n;
   cin >> n;
   print_min_operations_and_sequence(n);

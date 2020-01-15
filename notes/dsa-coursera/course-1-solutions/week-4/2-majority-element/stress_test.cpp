@@ -1,9 +1,8 @@
+#include <stdlib.h>
 #include <iostream>
 #include <vector>
-#include <stdlib.h>
 
-int count_of_element(const std::vector<long> &vector, int start, int end, long key)
-{
+int count_of_element(const std::vector<long> &vector, int start, int end, long key) {
   int count = 0;
   for (auto i = start; i <= end; ++i)
     if (vector[i] == key)
@@ -11,8 +10,7 @@ int count_of_element(const std::vector<long> &vector, int start, int end, long k
   return count;
 }
 
-int does_majority_element_exist(const std::vector<long> &vector, int start, int end)
-{
+int does_majority_element_exist(const std::vector<long> &vector, int start, int end) {
   // returns the position of the majority element if is exits, else returns -1
   if (end == start)
     return start;
@@ -36,16 +34,13 @@ int does_majority_element_exist(const std::vector<long> &vector, int start, int 
   return -1;
 }
 
-int main(int argc, char const *argv[])
-{
-  while (true)
-  {
+int main(int argc, char const *argv[]) {
+  while (true) {
     int n = rand() % 100000 + 1;
     // std::cin >> n;
     std::vector<long> vector;
     std::cout << "n: " << n << std::endl;
-    for (auto i = 0; i < n; ++i)
-    {
+    for (auto i = 0; i < n; ++i) {
       long temp = rand() % 1000000000 + 1;
       // std::cin >> temp;
       vector.push_back(temp);

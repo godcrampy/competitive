@@ -4,12 +4,10 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int columns;
   std::string cipher;
-  while (true)
-  {
+  while (true) {
     cin >> columns;
     if (columns == 0)
       break;

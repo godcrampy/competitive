@@ -12,8 +12,8 @@ struct Vertex {
   Vertex* right;
   Vertex* parent;
 
-  Vertex(int key, long long sum, Vertex* left, Vertex* right, Vertex* parent) 
-  : key(key), sum(sum), left(left), right(right), parent(parent) {}
+  Vertex(int key, long long sum, Vertex* left, Vertex* right, Vertex* parent)
+      : key(key), sum(sum), left(left), right(right), parent(parent) {}
 };
 
 void update(Vertex* v) {
@@ -67,7 +67,7 @@ void big_rotation(Vertex* v) {
     // Zig-zag
     small_rotation(v);
     small_rotation(v);
-  }  
+  }
 }
 
 // Makes splay of the given vertex and makes
@@ -89,7 +89,7 @@ void splay(Vertex*& root, Vertex* v) {
 // If found, returns a pointer to the node with the given key.
 // Otherwise, returns a pointer to the node with the smallest
 // bigger key (next value in the order).
-// If the key is bigger than all keys in the tree, 
+// If the key is bigger than all keys in the tree,
 // returns NULL.
 Vertex* find(Vertex*& root, int key) {
   Vertex* v = root;
@@ -101,7 +101,7 @@ Vertex* find(Vertex*& root, int key) {
     }
     last = v;
     if (v->key == key) {
-      break;      
+      break;
     }
     if (v->key < key) {
       v = v->right;
@@ -149,7 +149,7 @@ Vertex* root = NULL;
 void insert(int x) {
   Vertex* left = NULL;
   Vertex* right = NULL;
-  Vertex* new_vertex = NULL;  
+  Vertex* new_vertex = NULL;
   split(root, x, left, right);
   if (right == NULL || right->key != x) {
     new_vertex = new Vertex(x, x, NULL, NULL, NULL);
@@ -157,12 +157,11 @@ void insert(int x) {
   root = merge(merge(left, new_vertex), right);
 }
 
-void erase(int x) {                   
+void erase(int x) {
   // Implement erase yourself
-
 }
 
-bool find(int x) {  
+bool find(int x) {
   // Implement find yourself
 
   return false;
@@ -176,13 +175,13 @@ long long sum(int from, int to) {
   split(middle, to + 1, middle, right);
   long long ans = 0;
   // Complete the implementation of sum
-  
-  return ans;  
+
+  return ans;
 }
 
 const int MODULO = 1000000001;
 
-int main(){
+int main() {
   int n;
   scanf("%d", &n);
   int last_sum_result = 0;
@@ -191,22 +190,22 @@ int main(){
     scanf("%s", buffer);
     char type = buffer[0];
     switch (type) {
-      case '+' : {
+      case '+': {
         int x;
         scanf("%d", &x);
         insert((x + last_sum_result) % MODULO);
       } break;
-      case '-' : {
+      case '-': {
         int x;
         scanf("%d", &x);
         erase((x + last_sum_result) % MODULO);
-      } break;            
-      case '?' : {
+      } break;
+      case '?': {
         int x;
         scanf("%d", &x);
         printf(find((x + last_sum_result) % MODULO) ? "Found\n" : "Not found\n");
       } break;
-      case 's' : {
+      case 's': {
         int l, r;
         scanf("%d %d", &l, &r);
         long long res = sum((l + last_sum_result) % MODULO, (r + last_sum_result) % MODULO);

@@ -1,15 +1,13 @@
-#include <iostream>
-#include "util.hpp"
-#include <vector>
 #include <algorithm>
+#include <iostream>
+#include <vector>
+#include "util.hpp"
 
-int main(int argc, char const *argv[])
-{
-
+int main(int argc, char const *argv[]) {
   /*--------  Initial Input Taking  --------*/
-  long number_of_stalls, number_of_cows; // N and C of the problem
+  long number_of_stalls, number_of_cows;  // N and C of the problem
   std::cin >> number_of_stalls >> number_of_cows;
-  std::vector<long long> positions(number_of_stalls, 0); // positions of the stall
+  std::vector<long long> positions(number_of_stalls, 0);  // positions of the stall
   for (auto i = 0; i < number_of_stalls; ++i)
     std::cin >> positions.at(i);
   std::sort(positions.begin(), positions.end());

@@ -8,11 +8,9 @@
 #include <map>
 #include <string>
 
-int number_of_deletions(std::map<char, int> &map1, std::map<char, int> &map2)
-{
+int number_of_deletions(std::map<char, int> &map1, std::map<char, int> &map2) {
   int deletions = 0;
-  for (auto stuff : map1)
-  {
+  for (auto stuff : map1) {
     char c1 = stuff.first;
     int i1 = stuff.second;
     if (map2.count(c1))
@@ -22,8 +20,7 @@ int number_of_deletions(std::map<char, int> &map1, std::map<char, int> &map2)
       // map2 doesn't have that charecter
       deletions += i1;
   }
-  for (auto stuff : map2)
-  {
+  for (auto stuff : map2) {
     char c2 = stuff.first;
     int i2 = stuff.second;
     if (map1.count(c2))
@@ -36,8 +33,7 @@ int number_of_deletions(std::map<char, int> &map1, std::map<char, int> &map2)
   return deletions;
 }
 
-void string_to_map(const std::string &string, std::map<char, int> &map)
-{
+void string_to_map(const std::string &string, std::map<char, int> &map) {
   // works
   for (auto charecter : string)
     if (map.count(charecter))
@@ -47,13 +43,11 @@ void string_to_map(const std::string &string, std::map<char, int> &map)
       map.insert({charecter, 1});
 }
 
-int main()
-{
+int main() {
   int t;
   std::cin >> t;
   std::getchar();
-  for (int _ = 0; _ < t; _++)
-  {
+  for (int _ = 0; _ < t; _++) {
     std::map<char, int> map1, map2;
     std::string string1, string2;
     std::getline(std::cin, string1);

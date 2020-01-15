@@ -1,11 +1,10 @@
 #include <iostream>
-#include "util.h"
 #include <vector>
+#include "util.h"
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int rows = 7;
   int columns = 5;
   vector<vector<char>> matrix;

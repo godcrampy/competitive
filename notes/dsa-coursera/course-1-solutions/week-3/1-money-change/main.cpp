@@ -1,22 +1,15 @@
 #include <iostream>
 
-int money_change(int cash)
-{
+int money_change(int cash) {
   int coins = 0;
-  while (cash > 0)
-  {
-    if (cash >= 10)
-    {
+  while (cash > 0) {
+    if (cash >= 10) {
       coins += cash / 10;
       cash = cash % 10;
-    }
-    else if (cash >= 5)
-    {
+    } else if (cash >= 5) {
       coins += cash / 5;
       cash = cash % 5;
-    }
-    else
-    {
+    } else {
       coins += cash;
       cash = 0;
     }
@@ -24,8 +17,7 @@ int money_change(int cash)
   return coins;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int n;
   std::cin >> n;
   std::cout << money_change(n) << std::endl;

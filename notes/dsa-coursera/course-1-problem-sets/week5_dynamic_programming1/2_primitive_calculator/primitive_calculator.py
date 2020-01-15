@@ -1,6 +1,7 @@
 # Uses python3
 import sys
 
+
 def optimal_sequence(n):
     sequence = []
     while n >= 1:
@@ -12,6 +13,7 @@ def optimal_sequence(n):
         else:
             n = n - 1
     return reversed(sequence)
+
 
 input = sys.stdin.read()
 n = int(input)

@@ -1,18 +1,15 @@
-#include <iostream>
 #include <algorithm>
+#include <iostream>
 #include <vector>
 
-int main()
-{
+int main() {
   int t;
   std::cin >> t;
   long number_of_stamps, number_of_friends;
-  for (int _ = 0; _ < t; _++)
-  {
+  for (int _ = 0; _ < t; _++) {
     std::cin >> number_of_stamps >> number_of_friends;
     std::vector<long> stamps;
-    for (auto i = 0; i < number_of_friends; ++i)
-    {
+    for (auto i = 0; i < number_of_friends; ++i) {
       long temp;
       std::cin >> temp;
       stamps.push_back(temp);
@@ -22,12 +19,10 @@ int main()
     long collection = 0;
     bool flag = false;
     int count = 0;
-    for (long number : stamps)
-    {
+    for (long number : stamps) {
       collection += number;
       ++count;
-      if (collection >= number_of_stamps)
-      {
+      if (collection >= number_of_stamps) {
         flag = true;
         break;
       }

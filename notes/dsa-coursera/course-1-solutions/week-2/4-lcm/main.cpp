@@ -1,7 +1,6 @@
 #include <iostream>
 
-long gcd(long a, long b)
-{
+long gcd(long a, long b) {
   if (a == 0)
     return b;
   if (b == 0)
@@ -11,13 +10,11 @@ long gcd(long a, long b)
   return gcd(b % a, a);
 }
 
-long long lcm(long a, long b)
-{
+long long lcm(long a, long b) {
   return (a * b) / gcd(a, b);
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long a, b;
   std::cin >> a >> b;
   std::cout << lcm(a, b) << std::endl;

@@ -3,12 +3,10 @@
 using namespace std;
 
 #include "util.h"
-int main()
-{
+int main() {
   int t, number;
   cin >> t;
-  for (int i = 0; i < t; i++)
-  {
+  for (int i = 0; i < t; i++) {
     cin >> number;
     cout << numberOfTrailingZerosInFactorial(number) << endl;
   }

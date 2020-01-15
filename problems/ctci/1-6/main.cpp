@@ -5,9 +5,9 @@ using namespace std;
 string compressed_string(string& s) {
   string copy = s + s;
   int c = 0, i = 0;
-  while(i < s.length()) {
+  while (i < s.length()) {
     int j = 1;
-    while(i + j < s.length() && s[i] == s[i + j]) {
+    while (i + j < s.length() && s[i] == s[i + j]) {
       ++j;
     }
     copy[c] = s[i];
@@ -16,7 +16,7 @@ string compressed_string(string& s) {
     i += j;
   }
   copy.erase(c);
-  if(copy.length() < s.length()) {
+  if (copy.length() < s.length()) {
     return copy;
   }
   return s;

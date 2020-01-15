@@ -3,11 +3,9 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int x, y, z;
-  while (true)
-  {
+  while (true) {
     cin >> x >> y >> z;
     if (x == 0 && y == 0 && z == 0)
       break;

@@ -1,11 +1,9 @@
 #include <iostream>
 #include "util.h"
 
-int main()
-{
+int main() {
   int t = 10;
-  for (int _ = 0; _ < t; _++)
-  {
+  for (int _ = 0; _ < t; _++) {
     std::string a_value, b_value;
     std::getline(std::cin, a_value);
     std::getline(std::cin, b_value);

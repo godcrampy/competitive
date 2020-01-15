@@ -1,7 +1,6 @@
 #include <iostream>
 
-int last_digit_of_fibonacci(int number)
-{
+int last_digit_of_fibonacci(int number) {
   int cache[number + 1];
   cache[0] = 0;
   cache[1] = 1;
@@ -10,8 +9,7 @@ int last_digit_of_fibonacci(int number)
   return cache[number];
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int number;
   std::cin >> number;
   std::cout << last_digit_of_fibonacci(number) << std::endl;

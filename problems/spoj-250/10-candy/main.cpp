@@ -3,18 +3,15 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int numberOfPackets;
-  while (true)
-  {
+  while (true) {
     cin >> numberOfPackets;
     int candies[numberOfPackets];
     for (int i = 0; i < numberOfPackets; i++)
       cin >> candies[i];
     int sum = sumOfArray(candies, numberOfPackets);
-    if (sum % numberOfPackets != 0)
-    {
+    if (sum % numberOfPackets != 0) {
       cout << -1 << endl;
       break;
     }

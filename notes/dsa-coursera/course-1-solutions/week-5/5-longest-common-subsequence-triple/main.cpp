@@ -3,8 +3,7 @@
 
 using namespace std;
 
-void print_length_of_subsequence(vector<long> a, vector<long> b, vector<long> c)
-{
+void print_length_of_subsequence(vector<long> a, vector<long> b, vector<long> c) {
   // Assumption: 1 index array
   int m = a.size(), n = b.size(), o = c.size();
   long table[m][n][o];
@@ -16,8 +15,7 @@ void print_length_of_subsequence(vector<long> a, vector<long> b, vector<long> c)
   // Fill the table
   for (int i = 1; i < m; ++i)
     for (int j = 1; j < n; ++j)
-      for (int k = 1; k < o; ++k)
-      {
+      for (int k = 1; k < o; ++k) {
         long t = table[i - 1][j][k];
         long u = table[i][j - 1][k];
         long v = table[i][j][k - 1];
@@ -31,8 +29,7 @@ void print_length_of_subsequence(vector<long> a, vector<long> b, vector<long> c)
   cout << table[m - 1][n - 1][o - 1] << endl;
 }
 
-int main()
-{
+int main() {
   int n, m, o;
   cin >> m;
   vector<long> a(m + 1, 0);

@@ -1,10 +1,10 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
-using std::vector;
 using std::cin;
 using std::cout;
+using std::vector;
 
 class JobQueue {
  private:
@@ -24,7 +24,7 @@ class JobQueue {
     int m;
     cin >> num_workers_ >> m;
     jobs_.resize(m);
-    for(int i = 0; i < m; ++i)
+    for (int i = 0; i < m; ++i)
       cin >> jobs_[i];
   }
 

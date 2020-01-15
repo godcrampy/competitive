@@ -2,10 +2,8 @@
 #include <string>
 using namespace std;
 
-void buildLowestNumberRec(string str, int n, string &res)
-{
-  if (n == 0)
-  {
+void buildLowestNumberRec(string str, int n, string &res) {
+  if (n == 0) {
     res.append(str);
     return;
   }
@@ -27,8 +25,7 @@ void buildLowestNumberRec(string str, int n, string &res)
   buildLowestNumberRec(new_str, n - minIndex, res);
 }
 
-string buildLowestNumber(string str, int n)
-{
+string buildLowestNumber(string str, int n) {
   string res = "";
 
   buildLowestNumberRec(str, n, res);
@@ -36,15 +33,13 @@ string buildLowestNumber(string str, int n)
   return res;
 }
 
-int main()
-{
+int main() {
   int n = 1;
 
   int t;
   std::cin >> t;
   getchar();
-  for (auto _ = 0; _ < t; ++_)
-  {
+  for (auto _ = 0; _ < t; ++_) {
     std::string input;
     std::getline(std::cin, input);
     cout << stol(buildLowestNumber(input, n)) << std::endl;

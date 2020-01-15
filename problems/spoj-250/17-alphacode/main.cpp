@@ -1,10 +1,8 @@
 #include <iostream>
 #include "util.hpp"
 
-int main()
-{
-  while (true)
-  {
+int main() {
+  while (true) {
     std::string a;
     std::getline(std::cin, a);
     if (a == "0")

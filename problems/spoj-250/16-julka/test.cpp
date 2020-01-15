@@ -1,9 +1,7 @@
 #include <iostream>
-#include <iostream>
 #include "util.h"
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   std::string a_value, b_value;
   std::getline(std::cin, a_value);
   std::getline(std::cin, b_value);

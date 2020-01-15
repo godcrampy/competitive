@@ -4,12 +4,10 @@
 
 #include <math.h>
 
-int stripZeroes(int number)
-{
+int stripZeroes(int number) {
   // works
   // strips the ending zeroes of a positive number
-  while (true)
-  {
+  while (true) {
     if (number % 10 == 0)
       number /= 10;
     else
@@ -18,20 +16,17 @@ int stripZeroes(int number)
   return number;
 }
 
-int lengthOfNumber(int number)
-{
+int lengthOfNumber(int number) {
   // works
   // returns length of a positve number
   return log10(number) + 1;
 }
 
-int reverseNumber(int number)
-{
+int reverseNumber(int number) {
   number = stripZeroes(number);
   int final = 0;
   int length = lengthOfNumber(number);
-  for (int i = 0; i < length; i++)
-  {
+  for (int i = 0; i < length; i++) {
     int lsb = number % 10;
     final += lsb * pow(10, length - i - 1);
     number /= 10;
@@ -43,12 +38,10 @@ int reverseNumber(int number)
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int t, l, r;
   cin >> t;
-  for (int _ = 0; _ < t; ++_)
-  {
+  for (int _ = 0; _ < t; ++_) {
     cin >> l >> r;
     cout << reverseNumber(reverseNumber(l) + reverseNumber(r)) << endl;
   }

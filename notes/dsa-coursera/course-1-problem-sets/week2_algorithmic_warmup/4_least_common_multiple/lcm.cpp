@@ -1,11 +1,11 @@
 #include <iostream>
 
 long long lcm_naive(int a, int b) {
-  for (long l = 1; l <= (long long) a * b; ++l)
+  for (long l = 1; l <= (long long)a * b; ++l)
     if (l % a == 0 && l % b == 0)
       return l;
 
-  return (long long) a * b;
+  return (long long)a * b;
 }
 
 int main() {

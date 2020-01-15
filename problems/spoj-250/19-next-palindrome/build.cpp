@@ -1,26 +1,23 @@
+#include <algorithm>
 #include <iostream>
 #include <string>
-#include <algorithm>
 
-bool is_all_nines(const std::string &input)
-{
+bool is_all_nines(const std::string &input) {
   for (auto charecter : input)
     if (charecter != '9')
       return false;
   return true;
 }
-std::string next_palindrome_odd(std::string input)
-{
+std::string next_palindrome_odd(std::string input) {
   int length = input.length();
-  int midpoint = length / 2; // 423 => 4 *2* 3
+  int midpoint = length / 2;  // 423 => 4 *2* 3
   std::string reverse = input, final = input;
   std::reverse(reverse.begin(), reverse.end());
   std::copy(reverse.begin() + midpoint + 1, reverse.end(), final.begin() + midpoint + 1);
   if (final > input)
     return final;
   int iterator = midpoint;
-  while (input.at(iterator) == '9')
-  {
+  while (input.at(iterator) == '9') {
     input.at(iterator) = '0';
     --iterator;
   }
@@ -31,18 +28,16 @@ std::string next_palindrome_odd(std::string input)
   return final;
 }
 
-std::string next_palindrome_even(std::string input)
-{
+std::string next_palindrome_even(std::string input) {
   int length = input.length();
-  int midpoint = length / 2 - 1; // 4242 => 4 *2* 4 2
+  int midpoint = length / 2 - 1;  // 4242 => 4 *2* 4 2
   std::string reverse = input, final = input;
   std::reverse(reverse.begin(), reverse.end());
   std::copy(reverse.begin() + midpoint + 1, reverse.end(), final.begin() + midpoint + 1);
   if (final > input)
     return final;
   int iterator = midpoint;
-  while (input.at(iterator) == '9')
-  {
+  while (input.at(iterator) == '9') {
     input.at(iterator) = '0';
     --iterator;
   }
@@ -53,15 +48,13 @@ std::string next_palindrome_even(std::string input)
   return final;
 }
 
-int main()
-{
+int main() {
   int t;
   std::cin >> t;
   getchar();
   std::string input;
   int length_of_string;
-  for (int _ = 0; _ < t; _++)
-  {
+  for (int _ = 0; _ < t; _++) {
     getline(std::cin, input);
     length_of_string = input.length();
     if (is_all_nines(input))

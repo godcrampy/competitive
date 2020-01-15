@@ -1,36 +1,29 @@
 #include <iostream>
 #include <vector>
 
-int merge(std::vector<long> &vector, int l, int m, int r)
-{
+int merge(std::vector<long> &vector, int l, int m, int r) {
   auto temp = vector;
   int count = 0;
   int iterator1 = l;
   int iterator2 = m + 1;
   int iterator = l;
-  while (iterator1 != m + 1 && iterator2 != r + 1)
-  {
-    if (temp[iterator1] > temp[iterator2])
-    {
+  while (iterator1 != m + 1 && iterator2 != r + 1) {
+    if (temp[iterator1] > temp[iterator2]) {
       count += (m - iterator1 + 1);
       vector[iterator] = temp[iterator2];
       ++iterator2;
-    }
-    else
-    {
+    } else {
       vector[iterator] = temp[iterator1];
       ++iterator1;
     }
     ++iterator;
   }
-  while (iterator1 != m + 1)
-  {
+  while (iterator1 != m + 1) {
     vector[iterator] = temp[iterator1];
     ++iterator1;
     ++iterator;
   }
-  while (iterator2 != r + 1)
-  {
+  while (iterator2 != r + 1) {
     vector[iterator] = temp[iterator2];
     ++iterator2;
     ++iterator;
@@ -38,8 +31,7 @@ int merge(std::vector<long> &vector, int l, int m, int r)
   return count;
 }
 
-int merge_sort(std::vector<long> &vector, int l, int r)
-{
+int merge_sort(std::vector<long> &vector, int l, int r) {
   if (l >= r)
     return 0;
   int mid = (l + r) / 2;
@@ -50,13 +42,11 @@ int merge_sort(std::vector<long> &vector, int l, int r)
   return count;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int n;
   std::cin >> n;
   std::vector<long> test(n, 0);
-  for (auto i = 0; i < n; ++i)
-  {
+  for (auto i = 0; i < n; ++i) {
     long temp;
     std::cin >> temp;
     test[i] = temp;

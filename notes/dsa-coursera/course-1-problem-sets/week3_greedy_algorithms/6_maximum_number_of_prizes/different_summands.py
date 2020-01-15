@@ -1,10 +1,12 @@
 # Uses python3
 import sys
 
+
 def optimal_summands(n):
     summands = []
-    #write your code here
+    # write your code here
     return summands
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

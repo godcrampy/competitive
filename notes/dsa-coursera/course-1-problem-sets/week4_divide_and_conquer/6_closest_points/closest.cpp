@@ -1,16 +1,15 @@
 #include <algorithm>
+#include <cmath>
+#include <iomanip>
 #include <iostream>
 #include <sstream>
-#include <iomanip>
-#include <vector>
 #include <string>
-#include <cmath>
+#include <vector>
 
-using std::vector;
-using std::string;
-using std::pair;
 using std::min;
-
+using std::pair;
+using std::string;
+using std::vector;
 
 double minimal_distance(vector<int> x, vector<int> y) {
   //write your code here

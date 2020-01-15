@@ -1,10 +1,12 @@
-#Uses python3
+# Uses python3
 
 import sys
 
+
 def lcs2(a, b):
-    #write your code here
+    # write your code here
     return min(len(a), len(b))
+
 
 if __name__ == '__main__':
     input = sys.stdin.read()

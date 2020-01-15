@@ -3,31 +3,26 @@
 
 using namespace std;
 
-void printVector(vector<int> vector)
-{
+void printVector(vector<int> vector) {
   for (auto i = vector.begin(); i != vector.end(); ++i)
     cout << *i << " ";
   cout << endl;
 }
 
-void initializeVector(vector<int> &a)
-{
+void initializeVector(vector<int> &a) {
   int count{0};
-  for (auto i = a.begin(); i != a.end(); ++i)
-  {
+  for (auto i = a.begin(); i != a.end(); ++i) {
     *i = count++;
   }
 }
 
-void printReverse(vector<int> a)
-{
+void printReverse(vector<int> a) {
   for (auto i = a.rbegin(); i != a.rend(); ++i)
     cout << *i << " ";
   cout << endl;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   vector<int> a(5);
   printVector(a);
   initializeVector(a);

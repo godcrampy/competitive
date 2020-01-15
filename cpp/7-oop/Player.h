@@ -1,18 +1,17 @@
 #ifndef _PLAYER
 #define _PLAYER
 
+#include <iostream>
 #include <string>
 #include <vector>
-#include <iostream>
 
-class Player
-{
-private:
+class Player {
+ private:
   std::string name;
   int health;
   float xp;
 
-public:
+ public:
   Player(std::string name = "", int health = 80, float xp = 10.0);
   Player(const Player &source);
   ~Player();

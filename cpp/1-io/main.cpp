@@ -1,11 +1,10 @@
 #include <iostream>
-#include <string>
 #include <limits>
+#include <string>
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   float a, b;
   char name[50];
 

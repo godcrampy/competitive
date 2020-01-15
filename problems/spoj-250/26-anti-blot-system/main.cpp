@@ -1,10 +1,9 @@
 #include <iostream>
-#include <vector>
-#include <string>
 #include <sstream>
+#include <string>
+#include <vector>
 
-std::string fix_stream(std::vector<std::string> vector)
-{
+std::string fix_stream(std::vector<std::string> vector) {
   if (vector.at(0).find("machula") != std::string::npos)
     vector.at(0) = std::to_string(std::stoi(vector.at(4)) - std::stoi(vector.at(2)));
   else if (vector.at(2).find("machula") != std::string::npos)
@@ -17,13 +16,11 @@ std::string fix_stream(std::vector<std::string> vector)
   return final;
 }
 
-int main()
-{
+int main() {
   int t;
   std::cin >> t;
   std::getchar();
-  for (int _ = 0; _ < t; _++)
-  {
+  for (int _ = 0; _ < t; _++) {
     std::getchar();
     std::string line, word;
     std::getline(std::cin, line);

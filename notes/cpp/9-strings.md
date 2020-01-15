@@ -30,6 +30,7 @@ name = "Sahil" + " Bondre"  // Not allowd as concatination of c style string not
 ```
 
 ### For range
+
 ```c++
 std::string name = "Sahil"
 for(char a:name)
@@ -38,4 +39,5 @@ for(char a:name)
 ```
 
 ### Comparision
-```==, !=, >=, >, <, <=``` all work. Greater than and less than work by comparing the ASCII values of charecters.
+
+`==, !=, >=, >, <, <=` all work. Greater than and less than work by comparing the ASCII values of charecters.

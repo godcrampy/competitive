@@ -4,8 +4,7 @@
 #include <vector>
 #include "util.hpp"
 
-std::string fix_stream(std::vector<std::string> vector)
-{
+std::string fix_stream(std::vector<std::string> vector) {
   if (vector.at(0).find("machula") != std::string::npos)
     vector.at(0) = std::to_string(std::stoi(vector.at(4)) - std::stoi(vector.at(2)));
   else if (vector.at(2).find("machula") != std::string::npos)
@@ -18,8 +17,7 @@ std::string fix_stream(std::vector<std::string> vector)
   return final;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   std::string line, word;
   std::getline(std::cin, line);
   std::vector<std::string> split;

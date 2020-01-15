@@ -7,8 +7,7 @@ const int pisano_period = 60;
 // sum of pisano sequence of 10
 const int sum_of_sequence = 280;
 
-int last_digit_of_fibonacci(long long number)
-{
+int last_digit_of_fibonacci(long long number) {
   int seq[pisano_period];
   seq[0] = 0;
   seq[1] = 1;
@@ -17,8 +16,7 @@ int last_digit_of_fibonacci(long long number)
   return seq[number % pisano_period];
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long long n;
   std::cin >> n;
   std::cout << last_digit_of_fibonacci(n) * last_digit_of_fibonacci(n + 1) % 10 << std::endl;

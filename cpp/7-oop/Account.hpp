@@ -3,13 +3,12 @@
 
 #include <string>
 
-class Account
-{
-private:
+class Account {
+ private:
   double balance = 0;
   std::string name;
 
-public:
+ public:
   double get_balance();
   void set_balance(double balance);
 

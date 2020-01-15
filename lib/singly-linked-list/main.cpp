@@ -2,8 +2,7 @@
 
 using namespace std;
 
-struct Node
-{
+struct Node {
   int data;
   struct Node *next;
   Node(int data = 0) : data(data), next(nullptr) {}
@@ -11,16 +10,15 @@ struct Node
 
 typedef struct Node Node;
 
-class SinglyLinkedList
-{
-private:
+class SinglyLinkedList {
+ private:
   Node *head;
   Node *tail;
   int length;
 
   Node *get_iterator_at_index(int index);
 
-public:
+ public:
   SinglyLinkedList() : head(nullptr), tail(nullptr), length(0) {}
   int get_length() { return this->length; }
   void print();
@@ -32,8 +30,7 @@ public:
   int erase(int index);
 };
 
-Node *SinglyLinkedList::get_iterator_at_index(int index)
-{
+Node *SinglyLinkedList::get_iterator_at_index(int index) {
   if (index >= this->length)
     return nullptr;
   Node *iterator = this->head;
@@ -42,20 +39,17 @@ Node *SinglyLinkedList::get_iterator_at_index(int index)
   return iterator;
 }
 
-void SinglyLinkedList::print()
-{
+void SinglyLinkedList::print() {
   // works
   Node *iterator = this->head;
-  while (iterator != nullptr)
-  {
+  while (iterator != nullptr) {
     cout << iterator->data << " ";
     iterator = iterator->next;
   }
   cout << endl;
 }
 
-void SinglyLinkedList::unshift(int data)
-{
+void SinglyLinkedList::unshift(int data) {
   // works
   Node *node = new Node(data);
   node->next = this->head;
@@ -65,8 +59,7 @@ void SinglyLinkedList::unshift(int data)
   ++this->length;
 }
 
-int SinglyLinkedList::shift()
-{
+int SinglyLinkedList::shift() {
   // works
   --this->length;
   if (this->head == nullptr)
@@ -76,8 +69,7 @@ int SinglyLinkedList::shift()
   return value;
 }
 
-void SinglyLinkedList::push(int data)
-{
+void SinglyLinkedList::push(int data) {
   // works
   Node *node = new Node(data);
   if (this->length != 0)
@@ -88,14 +80,12 @@ void SinglyLinkedList::push(int data)
   ++this->length;
 }
 
-int SinglyLinkedList::pop()
-{
+int SinglyLinkedList::pop() {
   // works
   if (this->tail == nullptr)
     return -1;
   --this->length;
-  if (this->length == 0)
-  {
+  if (this->length == 0) {
     int val = this->tail->data;
     this->head = nullptr;
     this->tail = nullptr;
@@ -107,8 +97,7 @@ int SinglyLinkedList::pop()
   return val;
 }
 
-void SinglyLinkedList::insert(int index, int data)
-{
+void SinglyLinkedList::insert(int index, int data) {
   // works
   if (index < 0 || index > this->length)
     return;
@@ -124,8 +113,7 @@ void SinglyLinkedList::insert(int index, int data)
   ++this->length;
 }
 
-int SinglyLinkedList::erase(int index)
-{
+int SinglyLinkedList::erase(int index) {
   // works
   if (index < 0 || index >= this->length)
     return -1;
@@ -140,8 +128,7 @@ int SinglyLinkedList::erase(int index)
   return post->data;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   SinglyLinkedList list;
   list.insert(0, 0);
   list.insert(1, 1);

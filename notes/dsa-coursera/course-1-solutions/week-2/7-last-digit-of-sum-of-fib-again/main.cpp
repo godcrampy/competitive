@@ -5,8 +5,7 @@ const int pisano_period = 60;
 // sum of pisano sequence of 10
 const int sum_of_sequence = 280;
 
-int last_digit_of_sum(long long number)
-{
+int last_digit_of_sum(long long number) {
   if (number < 1)
     return 0;
   int sequence[pisano_period];
@@ -21,8 +20,7 @@ int last_digit_of_sum(long long number)
   return last_digit % 10;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long long a, b;
   std::cin >> a >> b;
   std::cout << (last_digit_of_sum(b) + 10 - last_digit_of_sum(a - 1)) % 10 << std::endl;

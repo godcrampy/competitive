@@ -1,8 +1,7 @@
 #include <iostream>
 #include <vector>
 
-std::vector<int> multiply_polynomial_naive(const std::vector<int> &a, const std::vector<int> &b)
-{
+std::vector<int> multiply_polynomial_naive(const std::vector<int> &a, const std::vector<int> &b) {
   int length = a.size();
   std::vector<int> final(2 * length - 1, 0);
   for (auto i = 0; i < length; ++i)
@@ -11,8 +10,7 @@ std::vector<int> multiply_polynomial_naive(const std::vector<int> &a, const std:
   return final;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   std::vector<int> a = {3, 2, 5}, b = {5, 1, 2};
   auto final = multiply_polynomial_naive(a, b);
   for (auto number : final)

@@ -1,44 +1,36 @@
-#include <iostream>
-#include <vector>
 #include <stdlib.h>
 #include <algorithm>
+#include <iostream>
+#include <vector>
 
-void merge(std::vector<long> &vector, int l, int m, int r)
-{
+void merge(std::vector<long> &vector, int l, int m, int r) {
   auto temp = vector;
   int iterator1 = l;
   int iterator2 = m + 1;
   int iterator = l;
-  while (iterator1 != m + 1 && iterator2 != r + 1)
-  {
-    if (temp[iterator1] > temp[iterator2])
-    {
+  while (iterator1 != m + 1 && iterator2 != r + 1) {
+    if (temp[iterator1] > temp[iterator2]) {
       vector[iterator] = temp[iterator2];
       ++iterator2;
-    }
-    else
-    {
+    } else {
       vector[iterator] = temp[iterator1];
       ++iterator1;
     }
     ++iterator;
   }
-  while (iterator1 != m + 1)
-  {
+  while (iterator1 != m + 1) {
     vector[iterator] = temp[iterator1];
     ++iterator1;
     ++iterator;
   }
-  while (iterator2 != r + 1)
-  {
+  while (iterator2 != r + 1) {
     vector[iterator] = temp[iterator2];
     ++iterator2;
     ++iterator;
   }
 }
 
-void merge_sort(std::vector<long> &vector, int l, int r)
-{
+void merge_sort(std::vector<long> &vector, int l, int r) {
   if (l >= r)
     return;
   int mid = (l + r) / 2;
@@ -47,10 +39,8 @@ void merge_sort(std::vector<long> &vector, int l, int r)
   merge(vector, l, mid, r);
 }
 
-int main(int argc, char const *argv[])
-{
-  while (true)
-  {
+int main(int argc, char const *argv[]) {
+  while (true) {
     int n = rand() % 100000 + 1;
     std::vector<long> test;
     for (auto i = 0; i < n; ++i)

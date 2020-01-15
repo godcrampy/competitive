@@ -2,14 +2,12 @@
 #include <vector>
 #include "util.hpp"
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long l, n;
   std::cin >> n >> l;
   std::vector<Square> list(n + 1, Square());
   std::vector<long> ladder_positions;
-  for (long i = 0; i < l; i++)
-  {
+  for (long i = 0; i < l; i++) {
     long position, ending;
     std::cin >> position >> ending;
     list.at(position).has_ladder = true;

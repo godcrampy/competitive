@@ -1,9 +1,9 @@
+#include <cstdlib>
 #include <iostream>
 #include <vector>
-#include <cstdlib>
 
-using std::vector;
 using std::swap;
+using std::vector;
 
 int partition2(vector<int> &a, int l, int r) {
   int x = a[l];

@@ -1,7 +1,6 @@
 #include <iostream>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   long long n;
   std::cin >> n;
   if ((n & (n - 1)) == 0)

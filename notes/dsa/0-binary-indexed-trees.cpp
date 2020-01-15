@@ -11,31 +11,26 @@
  * * https://www.hackerearth.com/practice/notes/binary-indexed-tree-or-fenwick-tree/ 
  */
 
-auto print_vector(std::vector<int> vector)
-{
+auto print_vector(std::vector<int> vector) {
   for (auto number : vector)
     std::cout << number << " ";
   std::cout << std::endl;
 }
-inline auto last_set_bit(int number)
-{
+inline auto last_set_bit(int number) {
   return number - (number & (-number));
 }
 
-inline auto parent(int number)
-{
+inline auto parent(int number) {
   return number + (number & (-number));
 }
 
-auto make_BIT(std::vector<int> &array, std::vector<int> &BIT)
-{
+auto make_BIT(std::vector<int> &array, std::vector<int> &BIT) {
   // works
   // * Assumes BIT and Array are 1 indexed
   // ? O(n)
   BIT = {0};
   int size = array.size();
-  for (auto i = 1; i < size; ++i)
-  {
+  for (auto i = 1; i < size; ++i) {
     int start = last_set_bit(i), sum = 0;
     for (auto j = start + 1; j <= i; ++j)
       sum += array.at(j);
@@ -43,8 +38,7 @@ auto make_BIT(std::vector<int> &array, std::vector<int> &BIT)
   }
 }
 
-auto get_sum(std::vector<int> &BIT, int position)
-{
+auto get_sum(std::vector<int> &BIT, int position) {
   // works
   // * Assumes 1 indexed BIT
   // ? O(log(n))
@@ -53,8 +47,7 @@ auto get_sum(std::vector<int> &BIT, int position)
   return BIT.at(position) + get_sum(BIT, last_set_bit(position));
 }
 
-auto update_BIT(std::vector<int> &BIT, int position, int value)
-{
+auto update_BIT(std::vector<int> &BIT, int position, int value) {
   // works
   // * Assumes 1 indexed BIT
   // ? O(log(n))
@@ -65,15 +58,13 @@ auto update_BIT(std::vector<int> &BIT, int position, int value)
   return 0;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   std::vector<int> array = {0};
   int size = 0;
   std::cout << "Enter size of array :";
   std::cin >> size;
   std::vector<int> BIT(size + 1, 0);
-  for (auto i = 0; i < size; ++i)
-  {
+  for (auto i = 0; i < size; ++i) {
     int temp;
     std::cin >> temp;
     array.push_back(temp);

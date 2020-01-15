@@ -2,9 +2,7 @@
 using namespace std;
 #include "util.h"
 
-
-int main()
-{
+int main() {
   int n;
   cin >> n;
   cout << numberOfTrailingZerosInFactorial(n) << endl;

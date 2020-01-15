@@ -1,22 +1,18 @@
 #include <iostream>
 
-int number_of_cards(float length)
-{
+int number_of_cards(float length) {
   int i = 2;
   float current_length = 0;
-  while (current_length < length)
-  {
+  while (current_length < length) {
     current_length += 1 / static_cast<float>(i);
     ++i;
   }
   return i - 2;
 }
 
-int main()
-{
+int main() {
   float n;
-  while (true)
-  {
+  while (true) {
     std::cin >> n;
     if (n == 0.00)
       break;

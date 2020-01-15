@@ -1,23 +1,19 @@
 #include <iostream>
-#include <vector>
 #include <utility>
+#include <vector>
 
 template <class T>
-void swap(T &a, T &b)
-{
+void swap(T &a, T &b) {
   T temp = a;
   a = b;
   b = temp;
 }
 
-int partition(std::vector<long> &vector, int l, int r)
-{
+int partition(std::vector<long> &vector, int l, int r) {
   long pivot = vector[l];
   int last_of_small_elements = l;
-  for (auto i = l + 1; i <= r; ++i)
-  {
-    if (vector[i] < pivot)
-    {
+  for (auto i = l + 1; i <= r; ++i) {
+    if (vector[i] < pivot) {
       ++last_of_small_elements;
       swap(vector[i], vector[last_of_small_elements]);
     }
@@ -26,17 +22,13 @@ int partition(std::vector<long> &vector, int l, int r)
   return last_of_small_elements;
 }
 
-std::pair<int, int> fast_partition(std::vector<long> &vector, int l, int r)
-{
+std::pair<int, int> fast_partition(std::vector<long> &vector, int l, int r) {
   long pivot = vector[l];
   int first_of_pivots = l;
   int last_of_pivots = l;
-  for (auto i = l + 1; i <= r; ++i)
-  {
-    if (vector[i] < pivot)
-    {
-      if (last_of_pivots + 1 == i)
-      {
+  for (auto i = l + 1; i <= r; ++i) {
+    if (vector[i] < pivot) {
+      if (last_of_pivots + 1 == i) {
         swap(vector[first_of_pivots], vector[i]);
         ++first_of_pivots;
         ++last_of_pivots;
@@ -47,8 +39,7 @@ std::pair<int, int> fast_partition(std::vector<long> &vector, int l, int r)
       swap(vector[first_of_pivots - 1], vector[last_of_pivots]);
       swap(vector[first_of_pivots - 1], vector[i]);
     }
-    if (vector[i] == pivot)
-    {
+    if (vector[i] == pivot) {
       ++last_of_pivots;
       swap(vector[i], vector[last_of_pivots]);
     }
@@ -56,8 +47,7 @@ std::pair<int, int> fast_partition(std::vector<long> &vector, int l, int r)
   return {first_of_pivots, last_of_pivots};
 }
 
-void fast_quick_sort(std::vector<long> &vector, int l, int r)
-{
+void fast_quick_sort(std::vector<long> &vector, int l, int r) {
   if (l >= r)
     return;
   auto positions = fast_partition(vector, l, r);
@@ -65,8 +55,7 @@ void fast_quick_sort(std::vector<long> &vector, int l, int r)
   fast_quick_sort(vector, positions.second + 1, r);
 }
 
-void quick_sort(std::vector<long> &vector, int l, int r)
-{
+void quick_sort(std::vector<long> &vector, int l, int r) {
   if (l >= r)
     return;
   int mid = partition(vector, l, r);
@@ -74,14 +63,11 @@ void quick_sort(std::vector<long> &vector, int l, int r)
   quick_sort(vector, mid + 1, r);
 }
 
-int main(int argc, char const *argv[])
-{
-  while (true)
-  {
+int main(int argc, char const *argv[]) {
+  while (true) {
     int n = rand() % 100000 + 1;
     std::vector<long> test;
-    for (auto i = 0; i < n; ++i)
-    {
+    for (auto i = 0; i < n; ++i) {
       test.push_back(rand() % 10000000 + 1);
     }
     auto second = test;

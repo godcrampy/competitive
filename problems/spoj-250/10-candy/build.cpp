@@ -2,19 +2,16 @@
 
 using namespace std;
 
-int sumOfArray(int array[], int length)
-{
+int sumOfArray(int array[], int length) {
   int sum = 0;
   for (int i = 0; i < length; i++)
     sum += array[i];
   return sum;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int numberOfPackets;
-  while (true)
-  {
+  while (true) {
     cin >> numberOfPackets;
     if (numberOfPackets == -1)
       break;
@@ -22,12 +19,9 @@ int main(int argc, char const *argv[])
     for (int i = 0; i < numberOfPackets; i++)
       cin >> candies[i];
     int sum = sumOfArray(candies, numberOfPackets);
-    if (sum % numberOfPackets != 0)
-    {
+    if (sum % numberOfPackets != 0) {
       cout << -1 << endl;
-    }
-    else
-    {
+    } else {
       int average = sum / numberOfPackets;
       int change = 0;
       for (int i = 0; i < numberOfPackets; i++)

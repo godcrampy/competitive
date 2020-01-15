@@ -1,13 +1,11 @@
 #include <iostream>
 #include "Player.h"
 
-void fun_foo(Player player)
-{
+void fun_foo(Player player) {
   // do nothing!
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   Player mario("Mario");
   mario.print_player();
 

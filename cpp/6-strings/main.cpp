@@ -1,9 +1,8 @@
-#include <iostream>
-#include <cstring>
 #include <cctype>
+#include <cstring>
+#include <iostream>
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   char first_name[50]{};
   char last_name[50]{};
   char full_name[100]{};

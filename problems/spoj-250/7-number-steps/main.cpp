@@ -3,12 +3,10 @@
 
 using namespace std;
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int t, x, y;
   cin >> t;
-  for (int _ = 0; _ < t; _++)
-  {
+  for (int _ = 0; _ < t; _++) {
     cin >> x >> y;
     if (isValid(x, y))
       cout << getNumber(x, y) << endl;

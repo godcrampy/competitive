@@ -1,14 +1,12 @@
 #include <iostream>
 
-long fibonacci(long number)
-{
+long fibonacci(long number) {
   if (number <= 1)
     return number;
   return fibonacci(number - 1) + fibonacci(number - 2);
 }
 
-long fibonacci_fast(long number)
-{
+long fibonacci_fast(long number) {
   // no need of static. non recursive solution
   long cache[number + 1];
   cache[0] = 0;
@@ -18,8 +16,7 @@ long fibonacci_fast(long number)
   return cache[number];
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int n;
   std::cin >> n;
   std::cout << fibonacci_fast(n) << '\n';

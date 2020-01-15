@@ -1,14 +1,12 @@
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 
-long get_sum(std::vector<long> vector, long k)
-{
+long get_sum(std::vector<long> vector, long k) {
   if (vector.size() == 0)
     return 0;
   std::sort(vector.begin(), vector.end());
-  for (auto i = 0; i < vector.size() - 1; ++i)
-  {
+  for (auto i = 0; i < vector.size() - 1; ++i) {
     auto diff = vector[i] - k;
     vector[i] -= diff;
     vector[i + 1] -= diff;
@@ -19,18 +17,15 @@ long get_sum(std::vector<long> vector, long k)
   return sum;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int t = 0;
   std::cin >> t;
-  for (auto _ = 0; _ < t; ++_)
-  {
+  for (auto _ = 0; _ < t; ++_) {
     int n;
     long k, sum = 0;
     std::cin >> n >> k;
     std::vector<long> vector;
-    for (auto i = 0; i < n; ++i)
-    {
+    for (auto i = 0; i < n; ++i) {
       long temp;
       std::cin >> temp;
       if (temp <= k)

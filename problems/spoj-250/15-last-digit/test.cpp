@@ -1,9 +1,8 @@
 #include <iostream>
-#include "util.h"
 #include <vector>
+#include "util.h"
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int a;
   unsigned long long b;
   std::cin >> a >> b;

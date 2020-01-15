@@ -1,10 +1,9 @@
-#include <iostream>
 #include <math.h>
+#include <iostream>
 
 using namespace std;
 
-int isPrime(int number)
-{
+int isPrime(int number) {
   if (number == 1)
     return 0;
   for (int i = 2; i <= sqrt(number); i++)
@@ -13,15 +12,12 @@ int isPrime(int number)
   return 1;
 }
 
-int main(int argc, char const *argv[])
-{
+int main(int argc, char const *argv[]) {
   int t, m, n;
   cin >> t;
-  for (int _ = 0; _ < t; ++_)
-  {
+  for (int _ = 0; _ < t; ++_) {
     cin >> m >> n;
-    for (int i = m; i <= n; i++)
-    {
+    for (int i = m; i <= n; i++) {
       if (isPrime(i))
         cout << i << endl;
     }
