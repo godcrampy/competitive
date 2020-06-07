@@ -1,9 +1,19 @@
+#include <algorithm>
 #include <iostream>
+#include <vector>
 
-int main() {
+using namespace std;
+
+void solve() {
+}
+
+int main(int argc, char const* argv[]) {
+  ios_base::sync_with_stdio(false);
+  cin.tie(NULL);
   int t;
-  std::cin >> t;
-  for (int _ = 0; _ < t; _++) {
+  cin >> t;
+  for (int i = 0; i < t; ++i) {
+    solve();
   }
   return 0;
 }
