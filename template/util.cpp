@@ -10,7 +10,8 @@ int randomNumber(int l, int r) {
   return l + (std::rand() % (r - l + 1));
 }
 
-void printVector(const vector<int>& v, string msg) {
+template <typename T>
+void printVector(const vector<T>& v, string msg) {
   cout << msg;
   for (auto n : v) {
     cout << n << " ";
