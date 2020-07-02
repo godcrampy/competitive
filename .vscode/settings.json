@@ -75,5 +75,12 @@
     "thread": "cpp",
     "typeindex": "cpp",
     "variant": "cpp"
+  },
+  "python.pythonPath": "/usr/bin/python",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
   }
 }
