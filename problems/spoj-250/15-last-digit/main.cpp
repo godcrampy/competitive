@@ -4,8 +4,7 @@
 using namespace std;
 int power_calculation(int base, int exponent) {
   int result = 1;
-  for (int _ = 0; _ < exponent; _++)
-    result *= base;
+  for (int _ = 0; _ < exponent; _++) result *= base;
   return result;
 }
 int main() {

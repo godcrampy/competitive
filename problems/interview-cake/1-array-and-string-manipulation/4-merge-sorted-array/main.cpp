@@ -5,7 +5,8 @@
 
 using namespace std;
 
-vector<int> mergeVectors(const vector<int>& myVector, const vector<int>& alicesVector) {
+vector<int> mergeVectors(const vector<int>& myVector,
+                         const vector<int>& alicesVector) {
   // combine the sorted vectors into one large sorted vector
   int l1 = myVector.size();
   int l2 = alicesVector.size();

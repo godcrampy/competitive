@@ -21,14 +21,15 @@ void printVector(const vector<int>& v, string msg) {
   cout << endl;
 }
 
-// ? Given two arrays X and Y of positive integers, find number of pairs such that x^y > y^x (raised to power of) where x is an element from X and y is an element from Y.
+// ? Given two arrays X and Y of positive integers, find number of pairs such
+// that x^y > y^x (raised to power of) where x is an element from X and y is an
+// element from Y.
 
 long naiveApproach(const vector<int> x, const vector<int> y) {
   // * T:O(mn) S:O(1)
   long pairs = 0;
   for (int X : x) {
-    for (int Y : y)
-      pairs += pow(X, Y) > pow(Y, X);
+    for (int Y : y) pairs += pow(X, Y) > pow(Y, X);
   }
   return pairs;
 }

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 
-int binary_search_recursive(const std::vector<long> &vector, long key, int start, int end) {
-  if (start >= end && vector[start] != key)
-    return -1;
+int binary_search_recursive(const std::vector<long> &vector, long key,
+                            int start, int end) {
+  if (start >= end && vector[start] != key) return -1;
   int mid = (start + end) / 2;
   if (vector[mid] == key)
     return mid;

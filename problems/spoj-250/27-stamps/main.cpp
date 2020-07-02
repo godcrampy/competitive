@@ -29,8 +29,7 @@ int main() {
     }
     std::cout << "Scenario #" << _ + 1 << ":" << std::endl;
     if (flag)
-      std::cout << count << "\n"
-                << std::endl;
+      std::cout << count << "\n" << std::endl;
     else
       std::cout << "impossible"
                 << "\n"

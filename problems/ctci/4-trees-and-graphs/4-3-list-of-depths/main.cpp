@@ -18,7 +18,8 @@ struct ListNode {
   ListNode(int val) : val(val), next(NULL) {}
 };
 
-void fill_map_dfs(TreeNode* head, int depth, map<int, pair<ListNode*, ListNode*>>& m) {
+void fill_map_dfs(TreeNode* head, int depth,
+                  map<int, pair<ListNode*, ListNode*>>& m) {
   if (head == NULL) return;
   if (m.find(depth) == m.end()) {
     // depth not found

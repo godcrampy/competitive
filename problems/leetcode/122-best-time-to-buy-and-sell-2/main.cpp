@@ -14,7 +14,8 @@ bool isPeak(const vector<int>& prices, int position) {
     return prices[position] > prices[position + 1];
   }
 
-  return (prices[position] >= prices[position - 1]) && (prices[position] >= prices[position + 1]);
+  return (prices[position] >= prices[position - 1]) &&
+         (prices[position] >= prices[position + 1]);
 }
 
 bool isValley(const vector<int>& prices, int position) {
@@ -29,7 +30,8 @@ bool isValley(const vector<int>& prices, int position) {
     return prices[position] < prices[position + 1];
   }
 
-  return (prices[position] <= prices[position - 1]) && (prices[position] < prices[position + 1]);
+  return (prices[position] <= prices[position - 1]) &&
+         (prices[position] < prices[position + 1]);
 }
 
 int maxProfit(vector<int>& prices) {

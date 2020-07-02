@@ -20,7 +20,8 @@ void printVector(const vector<T>& v, string msg) {
   cout << endl;
 }
 
-// ? Given an array A of size N containing 0s, 1s, and 2s; you need to sort the array in ascending order.
+// ? Given an array A of size N containing 0s, 1s, and 2s; you need to sort the
+// array in ascending order.
 
 void naiveApproach(vector<int>& v) {
   // * T:O(nlogn) S:O(1)

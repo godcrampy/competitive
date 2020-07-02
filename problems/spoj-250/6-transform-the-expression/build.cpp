@@ -18,7 +18,7 @@ int main(int argc, char const *argv[]) {
 }
 
 string rearangePair(string expression) {
-  /*  
+  /*
     (stuff*stuff) => stuffstuff*
     tested for:
     "((a+b)*(d+e))" => "((a+b)*(d+e))"
@@ -26,7 +26,8 @@ string rearangePair(string expression) {
   if (expression[0] == '(' && expression[expression.length() - 1] == ')') {
     int operatorPosition = positionOfMainOperator(expression);
     string pre = expression.substr(1, operatorPosition - 1);
-    string post = expression.substr(operatorPosition + 1, expression.length() - 2 - operatorPosition);
+    string post = expression.substr(operatorPosition + 1,
+                                    expression.length() - 2 - operatorPosition);
     string op = {expression.at(operatorPosition)};
     pre = rearangePair(pre);
     post = rearangePair(post);
@@ -36,9 +37,9 @@ string rearangePair(string expression) {
 }
 
 int positionOfMainOperator(string expression) {
-  /*  
+  /*
     (stuff1 * stuff2) => postion of *
-    tested for 
+    tested for
     (a+b) => 2
     ((a+b)+(c+d)) =>6
     */
@@ -52,7 +53,9 @@ int positionOfMainOperator(string expression) {
     else if (expression.at(i) == ')')
       --level;
     if (!level)
-      if (expression.at(i) == '+' || expression.at(i) == '-' || expression.at(i) == '*' || expression.at(i) == '/' || expression.at(i) == '^')
+      if (expression.at(i) == '+' || expression.at(i) == '-' ||
+          expression.at(i) == '*' || expression.at(i) == '/' ||
+          expression.at(i) == '^')
         return i;
   }
   return -1;

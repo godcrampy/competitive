@@ -11,12 +11,9 @@ bool is_closing_bracket(char charecter) {
 }
 
 bool are_pairs(char opening, char closing) {
-  if (opening == '(' && closing == ')')
-    return true;
-  if (opening == '[' && closing == ']')
-    return true;
-  if (opening == '{' && closing == '}')
-    return true;
+  if (opening == '(' && closing == ')') return true;
+  if (opening == '[' && closing == ']') return true;
+  if (opening == '{' && closing == '}') return true;
   return false;
 }
 

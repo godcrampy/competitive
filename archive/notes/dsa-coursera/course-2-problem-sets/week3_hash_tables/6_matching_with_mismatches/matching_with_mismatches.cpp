@@ -15,8 +15,7 @@ int main() {
   while (cin >> k >> t >> p) {
     auto a = solve(k, t, p);
     cout << a.size();
-    for (int x : a)
-      cout << " " << x;
+    for (int x : a) cout << " " << x;
     cout << "\n";
   }
 }

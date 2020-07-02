@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 #include <iostream>
 
 using namespace std;
@@ -23,7 +24,8 @@ vector<int> convert(vector<int> array, long long int size) {
   vector<int> copy = array;
   sort(copy.begin(), copy.end());
   for (long long int i = 0; i < size; i++)
-    array[i] = lower_bound(copy.begin(), copy.end(), array[i]) - copy.begin() + 1;
+    array[i] =
+        lower_bound(copy.begin(), copy.end(), array[i]) - copy.begin() + 1;
 
   return array;
 }
@@ -31,8 +33,7 @@ vector<int> convert(vector<int> array, long long int size) {
 long long int totalInversions(vector<int> array, long long int size) {
   array = convert(array, size);
   int BIT[size + 1];
-  for (int i = 1; i < size; ++i)
-    BIT[i] = 0;
+  for (int i = 1; i < size; ++i) BIT[i] = 0;
   long long int inverseCount = 0;
   for (int i = size - 1; i >= 0; --i) {
     inverseCount += totalSum(BIT, array[i] - 1);

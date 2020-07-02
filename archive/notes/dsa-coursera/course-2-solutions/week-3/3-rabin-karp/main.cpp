@@ -23,10 +23,12 @@ int main(int argc, char const *argv[]) {
 
   vector<long long> precomputed_hashes(text_length - pattern_length + 1, 0);
 
-  precomputed_hashes[text_length - pattern_length] = hash_string(text, text_length - pattern_length, text_length - 1);
+  precomputed_hashes[text_length - pattern_length] =
+      hash_string(text, text_length - pattern_length, text_length - 1);
 
   for (long i = text_length - pattern_length - 1; i >= 0; --i) {
-    precomputed_hashes[i] = (precomputed_hashes[i + 1] + text[i] - text[i + pattern_length]) % p;
+    precomputed_hashes[i] =
+        (precomputed_hashes[i + 1] + text[i] - text[i + pattern_length]) % p;
   }
 
   // cout << hash_pattern << endl;

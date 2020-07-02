@@ -7,8 +7,7 @@ typedef struct node {
 } node;
 
 int cout_height(node *node) {
-  if (node->children.size() == 0)
-    return 1;
+  if (node->children.size() == 0) return 1;
   int max_height = 0;
   for (auto child : node->children) {
     max_height = std::max(max_height, cout_height(child));
@@ -40,8 +39,7 @@ int main(int argc, char const *argv[]) {
   int n;
   std::cin >> n;
   std::vector<int> map(n, 0);
-  for (auto i = 0; i < n; ++i)
-    std::cin >> map[i];
+  for (auto i = 0; i < n; ++i) std::cin >> map[i];
   std::cout << tree_height(map) << std::endl;
   return 0;
 }

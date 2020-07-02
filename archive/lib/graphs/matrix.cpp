@@ -1,4 +1,5 @@
 #include <limits.h>
+
 #include <iostream>
 #include <queue>
 #include <stack>
@@ -7,7 +8,8 @@ using namespace std;
 
 const int number_of_nodes = 5;
 
-void connect_nodes(int matrix[number_of_nodes][number_of_nodes], int a, int b, int distance);
+void connect_nodes(int matrix[number_of_nodes][number_of_nodes], int a, int b,
+                   int distance);
 void print_matrix(int matrix[number_of_nodes][number_of_nodes]);
 void bfs(int matrix[number_of_nodes][number_of_nodes], int a);
 void dfs(int matrix[number_of_nodes][number_of_nodes], int a);
@@ -39,7 +41,8 @@ int main(int argc, char const *argv[]) {
   return 0;
 }
 
-void connect_nodes(int matrix[number_of_nodes][number_of_nodes], int a, int b, int distance) {
+void connect_nodes(int matrix[number_of_nodes][number_of_nodes], int a, int b,
+                   int distance) {
   *(*(matrix + a) + b) = distance;
   *(*(matrix + b) + a) = distance;
 }
@@ -99,7 +102,8 @@ void dfs(int matrix[number_of_nodes][number_of_nodes], int a) {
   cout << endl;
 }
 
-int djikstras(int matrix[number_of_nodes][number_of_nodes], int start, int end) {
+int djikstras(int matrix[number_of_nodes][number_of_nodes], int start,
+              int end) {
   typedef struct row {
     bool visited;
     int node;
@@ -124,7 +128,8 @@ int djikstras(int matrix[number_of_nodes][number_of_nodes], int start, int end) 
     for (int i = 0; i < number_of_nodes; ++i) {
       if (matrix[current_vertex][i] != 0 && !table[i].visited) {
         // there is a connection and the node is not visited
-        if (table[i].distance >= table[current_vertex].distance + matrix[current_vertex][i]) {
+        if (table[i].distance >=
+            table[current_vertex].distance + matrix[current_vertex][i]) {
           // rewrite this row
           int min = table[current_vertex].distance + matrix[current_vertex][i];
           table[i].distance = min;

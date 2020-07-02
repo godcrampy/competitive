@@ -21,19 +21,17 @@ class BigInteger {
   BigInteger operator/(const int integer);
 };
 
-BigInteger::BigInteger(std::string string, int size) : string{string}, number{std::vector<int>(size, 0)}, size{size} {
+BigInteger::BigInteger(std::string string, int size)
+    : string{string}, number{std::vector<int>(size, 0)}, size{size} {
   this->string_to_integer();
 }
 
-void BigInteger::set_string(std::string string) {
-  this->string = string;
-}
+void BigInteger::set_string(std::string string) { this->string = string; }
 
 int BigInteger::get_MSB_position() {
   int first_place = 0;
   for (int i = 0; i < this->size; i++)
-    if (this->number.at(i) != 0)
-      first_place = i;
+    if (this->number.at(i) != 0) first_place = i;
   return first_place;
 }
 

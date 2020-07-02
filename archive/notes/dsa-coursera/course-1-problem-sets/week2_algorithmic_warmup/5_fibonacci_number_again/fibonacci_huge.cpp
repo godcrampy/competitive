@@ -1,8 +1,7 @@
 #include <iostream>
 
 long long get_fibonacci_huge_naive(long long n, long long m) {
-  if (n <= 1)
-    return n;
+  if (n <= 1) return n;
 
   long long previous = 0;
   long long current = 1;

@@ -9,7 +9,7 @@ vector<vector<int>> threeSum(vector<int>& nums) {
     return {};
   }
 
-  set<vector<int>> s; // to remove duplicates
+  set<vector<int>> s;  // to remove duplicates
 
   sort(nums.begin(), nums.end());
 

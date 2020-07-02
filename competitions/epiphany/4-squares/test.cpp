@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+
 #include "util.hpp"
 
 int main(int argc, char const *argv[]) {
@@ -15,6 +16,8 @@ int main(int argc, char const *argv[]) {
     ladder_positions.push_back(position);
   }
   for (long i : ladder_positions)
-    std::cout << ways_to_get_to_position(list, 0, i) + ways_to_get_to_last(list, i) << std::endl;
+    std::cout << ways_to_get_to_position(list, 0, i) +
+                     ways_to_get_to_last(list, i)
+              << std::endl;
   return 0;
 }

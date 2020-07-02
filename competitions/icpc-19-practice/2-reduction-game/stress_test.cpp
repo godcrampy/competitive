@@ -1,11 +1,11 @@
 #include <stdlib.h>
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
 
 long get_sum_naive(std::vector<long> vector, long k) {
-  if (vector.size() == 0)
-    return 0;
+  if (vector.size() == 0) return 0;
   std::sort(vector.begin(), vector.end());
   for (auto i = 0; i < vector.size() - 1; ++i) {
     while (vector[i] > k) {
@@ -14,14 +14,12 @@ long get_sum_naive(std::vector<long> vector, long k) {
     }
   }
   long sum = 0;
-  for (auto number : vector)
-    sum += number;
+  for (auto number : vector) sum += number;
   return sum;
 }
 
 long get_sum(std::vector<long> vector, long k) {
-  if (vector.size() == 0)
-    return 0;
+  if (vector.size() == 0) return 0;
   std::sort(vector.begin(), vector.end());
   for (auto i = 0; i < vector.size() - 1; ++i) {
     auto diff = vector[i] - k;
@@ -29,8 +27,7 @@ long get_sum(std::vector<long> vector, long k) {
     vector[i + 1] -= diff;
   }
   long sum = 0;
-  for (auto number : vector)
-    sum += number;
+  for (auto number : vector) sum += number;
   return sum;
 }
 
@@ -55,7 +52,8 @@ int main(int argc, char const *argv[]) {
       std::cout << "OK" << std::endl;
     else {
       std::cout << "WA" << std::endl;
-      std::cout << sum + get_sum(vector, k) << " " << sum + get_sum_naive(vector, k) << std::endl;
+      std::cout << sum + get_sum(vector, k) << " "
+                << sum + get_sum_naive(vector, k) << std::endl;
       break;
     }
   }

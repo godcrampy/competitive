@@ -13,9 +13,7 @@ class Node {
   Node *parent;
   std::vector<Node *> children;
 
-  Node() {
-    this->parent = NULL;
-  }
+  Node() { this->parent = NULL; }
 
   void setParent(Node *theParent) {
     parent = theParent;
@@ -33,8 +31,7 @@ int main_with_large_stack_space() {
   for (int child_index = 0; child_index < n; child_index++) {
     int parent_index;
     std::cin >> parent_index;
-    if (parent_index >= 0)
-      nodes[child_index].setParent(&nodes[parent_index]);
+    if (parent_index >= 0) nodes[child_index].setParent(&nodes[parent_index]);
     nodes[child_index].key = child_index;
   }
 
@@ -42,8 +39,7 @@ int main_with_large_stack_space() {
   int maxHeight = 0;
   for (int leaf_index = 0; leaf_index < n; leaf_index++) {
     int height = 0;
-    for (Node *v = &nodes[leaf_index]; v != NULL; v = v->parent)
-      height++;
+    for (Node *v = &nodes[leaf_index]; v != NULL; v = v->parent) height++;
     maxHeight = std::max(maxHeight, height);
   }
 

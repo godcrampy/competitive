@@ -12,9 +12,7 @@ class MinStack {
   int top = -1;
 
  public:
-  MinStack(int size) {
-    v = vector<pair<int, int>>(size);
-  }
+  MinStack(int size) { v = vector<pair<int, int>>(size); }
 
   void push(int a) {
     if (top == -1) {
@@ -29,18 +27,13 @@ class MinStack {
   }
 
   int pop() {
-    if (top >= 0)
-      return v[top--].first;
+    if (top >= 0) return v[top--].first;
     return -1;
   }
 
-  int getMin() {
-    return v[top].second;
-  }
+  int getMin() { return v[top].second; }
 
-  int getTop() {
-    return v[top].first;
-  }
+  int getTop() { return v[top].first; }
 };
 
 int main(int argc, char const *argv[]) {

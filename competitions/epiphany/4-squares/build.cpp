@@ -11,12 +11,9 @@ class Square {
 
 long ways_to_get_to_last(std::vector<Square> &list, long starting_position) {
   long n = list.size();
-  if (starting_position > n - 1)
-    return 0;
-  if (starting_position == n - 1)
-    return 1;
-  if (starting_position == n - 2)
-    return 1;
+  if (starting_position > n - 1) return 0;
+  if (starting_position == n - 1) return 1;
+  if (starting_position == n - 2) return 1;
   if (list.at(starting_position).has_ladder) {
     bool on_ladder = true;
     int position = starting_position;
@@ -29,12 +26,17 @@ long ways_to_get_to_last(std::vector<Square> &list, long starting_position) {
     }
     return ways_to_get_to_last(list, position);
   }
-  return ways_to_get_to_last(list, starting_position + 1) + ways_to_get_to_last(list, starting_position + 2) + ways_to_get_to_last(list, starting_position + 3) + ways_to_get_to_last(list, starting_position + 4) + ways_to_get_to_last(list, starting_position + 5) + ways_to_get_to_last(list, starting_position + 6);
+  return ways_to_get_to_last(list, starting_position + 1) +
+         ways_to_get_to_last(list, starting_position + 2) +
+         ways_to_get_to_last(list, starting_position + 3) +
+         ways_to_get_to_last(list, starting_position + 4) +
+         ways_to_get_to_last(list, starting_position + 5) +
+         ways_to_get_to_last(list, starting_position + 6);
 }
 
-long ways_to_get_to_position(std::vector<Square> &list, long starting_position, long end_position) {
-  if (starting_position >= end_position)
-    return 0;
+long ways_to_get_to_position(std::vector<Square> &list, long starting_position,
+                             long end_position) {
+  if (starting_position >= end_position) return 0;
   if (list.at(starting_position).has_ladder) {
     bool on_ladder = true;
     int position = starting_position;
@@ -47,7 +49,12 @@ long ways_to_get_to_position(std::vector<Square> &list, long starting_position, 
     }
     return ways_to_get_to_position(list, position, end_position);
   }
-  return ways_to_get_to_position(list, starting_position + 1, end_position) + ways_to_get_to_position(list, starting_position + 2, end_position) + ways_to_get_to_position(list, starting_position + 3, end_position) + ways_to_get_to_position(list, starting_position + 4, end_position) + ways_to_get_to_position(list, starting_position + 5, end_position) + ways_to_get_to_position(list, starting_position + 6, end_position);
+  return ways_to_get_to_position(list, starting_position + 1, end_position) +
+         ways_to_get_to_position(list, starting_position + 2, end_position) +
+         ways_to_get_to_position(list, starting_position + 3, end_position) +
+         ways_to_get_to_position(list, starting_position + 4, end_position) +
+         ways_to_get_to_position(list, starting_position + 5, end_position) +
+         ways_to_get_to_position(list, starting_position + 6, end_position);
 }
 
 int main(int argc, char const *argv[]) {
@@ -63,6 +70,8 @@ int main(int argc, char const *argv[]) {
     ladder_positions.push_back(position);
   }
   for (long &i : ladder_positions)
-    std::cout << ways_to_get_to_position(list, 0, i) + ways_to_get_to_last(list, i) << std::endl;
+    std::cout << ways_to_get_to_position(list, 0, i) +
+                     ways_to_get_to_last(list, i)
+              << std::endl;
   return 0;
 }

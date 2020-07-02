@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "util.h"
 
 using namespace std;
@@ -8,8 +9,7 @@ int main(int argc, char const *argv[]) {
   while (true) {
     cin >> numberOfPackets;
     int candies[numberOfPackets];
-    for (int i = 0; i < numberOfPackets; i++)
-      cin >> candies[i];
+    for (int i = 0; i < numberOfPackets; i++) cin >> candies[i];
     int sum = sumOfArray(candies, numberOfPackets);
     if (sum % numberOfPackets != 0) {
       cout << -1 << endl;

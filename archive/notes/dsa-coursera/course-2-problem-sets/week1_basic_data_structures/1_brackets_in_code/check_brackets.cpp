@@ -3,16 +3,12 @@
 #include <string>
 
 struct Bracket {
-  Bracket(char type, int position) : type(type),
-                                     position(position) {}
+  Bracket(char type, int position) : type(type), position(position) {}
 
   bool Matchc(char c) {
-    if (type == '[' && c == ']')
-      return true;
-    if (type == '{' && c == '}')
-      return true;
-    if (type == '(' && c == ')')
-      return true;
+    if (type == '[' && c == ']') return true;
+    if (type == '{' && c == '}') return true;
+    if (type == '(' && c == ')') return true;
     return false;
   }
 

@@ -23,8 +23,7 @@ int main() {
   cin >> n;
 
   vector<int> A(n);
-  for (size_t i = 0; i < n; ++i)
-    cin >> A.at(i);
+  for (size_t i = 0; i < n; ++i) cin >> A.at(i);
 
   int w = 0;
   cin >> w;

@@ -3,8 +3,7 @@
 #include <vector>
 
 long get_sum(std::vector<long> vector, long k) {
-  if (vector.size() == 0)
-    return 0;
+  if (vector.size() == 0) return 0;
   std::sort(vector.begin(), vector.end());
   for (auto i = 0; i < vector.size() - 1; ++i) {
     auto diff = vector[i] - k;
@@ -12,8 +11,7 @@ long get_sum(std::vector<long> vector, long k) {
     vector[i + 1] -= diff;
   }
   long sum = 0;
-  for (auto number : vector)
-    sum += number;
+  for (auto number : vector) sum += number;
   return sum;
 }
 

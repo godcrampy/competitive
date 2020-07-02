@@ -8,8 +8,7 @@ int MaxPairwiseProduct(const std::vector<int>& numbers) {
 
   for (int first = 0; first < n; ++first) {
     for (int second = first + 1; second < n; ++second) {
-      max_product = std::max(max_product,
-                             numbers[first] * numbers[second]);
+      max_product = std::max(max_product, numbers[first] * numbers[second]);
     }
   }
 

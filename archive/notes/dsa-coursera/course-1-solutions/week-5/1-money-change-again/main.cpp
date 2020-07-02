@@ -6,9 +6,7 @@ using namespace std;
 
 // available denominations  = 1, 3, 4
 
-int tri_min(int a, int b, int c) {
-  return min(a, min(b, c));
-}
+int tri_min(int a, int b, int c) { return min(a, min(b, c)); }
 
 int money_change(int n) {
   vector<int> table(n + 1, 0);

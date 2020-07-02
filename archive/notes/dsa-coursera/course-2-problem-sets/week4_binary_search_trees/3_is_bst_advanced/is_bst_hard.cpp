@@ -13,7 +13,8 @@ struct Node {
   int right;
 
   Node() : key(0), left(-1), right(-1) {}
-  Node(int key_, int left_, int right_) : key(key_), left(left_), right(right_) {}
+  Node(int key_, int left_, int right_)
+      : key(key_), left(left_), right(right_) {}
 };
 
 bool IsBinarySearchTree(const vector<Node>& tree) {

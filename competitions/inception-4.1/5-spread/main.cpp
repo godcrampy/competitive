@@ -30,7 +30,8 @@ int main(int argc, char const *argv[]) {
   }
 
   // sort by distance
-  sort(distance.begin(), distance.end(), [](pair<int, int> a, pair<int, int> b) { return a.first < b.first; });
+  sort(distance.begin(), distance.end(),
+       [](pair<int, int> a, pair<int, int> b) { return a.first < b.first; });
 
   for (int i = 0; i < n; ++i) {
     distance_to_sorted_index.insert({distance[i].first, i});
@@ -48,10 +49,12 @@ int main(int argc, char const *argv[]) {
     int index_of_max_reach = i + spread[i + 1] - 1;
     if (index_of_max_reach < spread[i + 1]) {
       while (index + count < n && distance[index + count].first <= max_reach) {
-        max_reach = max(max_reach, distance[index + count].first + distance[index + count].second);
+        max_reach = max(max_reach, distance[index + count].first +
+                                       distance[index + count].second);
         ++count;
       }
-      spread[i] = distance_to_index[sorted_index_to_distance[index + count - 1]] + 1;
+      spread[i] =
+          distance_to_index[sorted_index_to_distance[index + count - 1]] + 1;
     } else {
       spread[i] = spread[i + 1];
     }

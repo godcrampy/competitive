@@ -19,7 +19,8 @@ void printVector(const vector<int>& v, string msg) {
   cout << endl;
 }
 
-// ? Given an array arr of N integers. Find the contiguous sub-array with maximum sum.
+// ? Given an array arr of N integers. Find the contiguous sub-array with
+// maximum sum.
 
 int naiveApproach(const vector<int>& v) {
   // * T:O(n^2) S:O(1)

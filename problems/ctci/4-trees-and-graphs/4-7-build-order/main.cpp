@@ -53,7 +53,8 @@ Graph matrix_to_graph(vector<vector<bool>> matrix) {
 
 // ! IMP Topological sort & Finding loops in Directed Disconnected Graphs
 
-void topological_sort(Node *next, stack<Node *> &s, unordered_set<Node *> &to_visit) {
+void topological_sort(Node *next, stack<Node *> &s,
+                      unordered_set<Node *> &to_visit) {
   if (to_visit.find(next) == to_visit.end()) return;
   to_visit.erase(next);
 
@@ -80,13 +81,14 @@ vector<int> build_deps(Graph g) {
   return res;
 }
 
-bool dfs(Node *next, unordered_set<Node *> &visited_stack, unordered_set<Node *> &to_visit) {
+bool dfs(Node *next, unordered_set<Node *> &visited_stack,
+         unordered_set<Node *> &to_visit) {
   if (visited_stack.find(next) != visited_stack.end()) {
     // found in stack => cycle
     return true;
   }
   if (to_visit.find(next) == to_visit.end()) {
-    //already visited
+    // already visited
     return false;
   }
   to_visit.erase(next);

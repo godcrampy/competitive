@@ -10,13 +10,11 @@ void buildLowestNumberRec(string str, int n, string &res) {
 
   int len = str.length();
 
-  if (len <= n)
-    return;
+  if (len <= n) return;
 
   int minIndex = 0;
   for (int i = 1; i <= n; i++)
-    if (str[i] < str[minIndex])
-      minIndex = i;
+    if (str[i] < str[minIndex]) minIndex = i;
 
   res.push_back(str[minIndex]);
 

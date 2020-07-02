@@ -5,7 +5,8 @@ using namespace std;
 
 // ! IMP: Counting Sort
 
-vector<int> sortScores(const vector<int>& unorderedScores, int highestPossibleScore) {
+vector<int> sortScores(const vector<int>& unorderedScores,
+                       int highestPossibleScore) {
   // sort the scores in O(n) time
   vector<int> counts(highestPossibleScore + 1);
 

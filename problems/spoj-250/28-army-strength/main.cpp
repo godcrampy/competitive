@@ -23,7 +23,8 @@ int main() {
     std::sort(godzilla_army.begin(), godzilla_army.end(), std::greater<int>());
     std::sort(mech_army.begin(), mech_army.end(), std::greater<int>());
     while (godzilla_army_count != 0 && mech_army_count != 0) {
-      if (godzilla_army[godzilla_army_count - 1] < mech_army[mech_army_count - 1]) {
+      if (godzilla_army[godzilla_army_count - 1] <
+          mech_army[mech_army_count - 1]) {
         godzilla_army.pop_back();
         --godzilla_army_count;
       } else {

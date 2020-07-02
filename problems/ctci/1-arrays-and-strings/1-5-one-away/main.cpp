@@ -26,7 +26,8 @@ bool oneAway(string &a, string &b) {
       ++l;
       ++r;
     } else {
-      return equal(a, l + 1, b, r) || equal(a, l, b, r + 1) || equal(a, l + 1, b, r + 1);
+      return equal(a, l + 1, b, r) || equal(a, l, b, r + 1) ||
+             equal(a, l + 1, b, r + 1);
     }
   }
 

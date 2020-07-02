@@ -6,8 +6,7 @@ class Rope {
   std::string s;
 
  public:
-  Rope(const std::string &s) : s(s) {
-  }
+  Rope(const std::string &s) : s(s) {}
 
   void process(int i, int j, int k) {
     // Replace this code with a faster implementation
@@ -15,9 +14,7 @@ class Rope {
     s = t.substr(0, k) + s.substr(i, j - i + 1) + t.substr(k);
   }
 
-  std::string result() {
-    return s;
-  }
+  std::string result() { return s; }
 };
 
 int main() {

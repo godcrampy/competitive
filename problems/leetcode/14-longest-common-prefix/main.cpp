@@ -5,9 +5,10 @@
 using namespace std;
 
 string longestCommonPrefix(vector<string>& strs) {
-  if (strs.size() == 0)
-    return "";
-  auto min_str = min_element(strs.begin(), strs.end(), [](auto a, auto b) { return a.length() < b.length(); });
+  if (strs.size() == 0) return "";
+  auto min_str = min_element(strs.begin(), strs.end(), [](auto a, auto b) {
+    return a.length() < b.length();
+  });
   int min_length = (*min_str).length();
 
   for (int i = 0; i < min_length; ++i) {

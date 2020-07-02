@@ -6,7 +6,7 @@ using std::vector;
 
 int binary_search(const vector<int> &a, int x) {
   int left = 0, right = (int)a.size();
-  //write your code here
+  // write your code here
 }
 
 int linear_search(const vector<int> &a, int x) {
@@ -30,7 +30,7 @@ int main() {
     std::cin >> b[i];
   }
   for (int i = 0; i < m; ++i) {
-    //replace with the call to binary_search when implemented
+    // replace with the call to binary_search when implemented
     std::cout << linear_search(a, b[i]) << ' ';
   }
 }

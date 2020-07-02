@@ -3,8 +3,7 @@
 
 std::ostream &operator<<(std::ostream &stream, std::vector<int> vector) {
   stream << "[";
-  for (auto item : vector)
-    stream << item << ", ";
+  for (auto item : vector) stream << item << ", ";
   stream << "\b\b";
   stream << "]";
   return stream;
@@ -13,8 +12,7 @@ std::ostream &operator<<(std::ostream &stream, std::vector<int> vector) {
 std::istream &operator>>(std::istream &stream, std::vector<int> vector) {
   int temp;
   while (stream >> temp) {
-    if (temp == 0)
-      break;
+    if (temp == 0) break;
     vector.push_back(temp);
   }
   return stream;

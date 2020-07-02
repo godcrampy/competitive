@@ -29,9 +29,7 @@ class SetOfStack {
     return res;
   }
 
-  int top() {
-    return (v.end() - 1)->top();
-  }
+  int top() { return (v.end() - 1)->top(); }
 };
 
 int main(int argc, char const *argv[]) {

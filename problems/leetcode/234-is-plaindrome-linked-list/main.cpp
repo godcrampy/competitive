@@ -35,7 +35,6 @@ bool isPalindrome(ListNode* head) {
     stk.pop();
   }
 
-  if (s == NULL && stk.empty())
-    return true;
+  if (s == NULL && stk.empty()) return true;
   return false;
 }

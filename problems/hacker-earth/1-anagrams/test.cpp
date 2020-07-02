@@ -1,6 +1,7 @@
 #include <iostream>
 #include <map>
 #include <string>
+
 #include "util.hpp"
 
 int number_of_deletions(std::map<char, int> &map1, std::map<char, int> &map2) {

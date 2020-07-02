@@ -6,8 +6,7 @@ const int pisano_period = 60;
 const int sum_of_sequence = 280;
 
 int last_digit_of_sum(long long number) {
-  if (number < 1)
-    return 0;
+  if (number < 1) return 0;
   int sequence[pisano_period];
   sequence[0] = 0;
   sequence[1] = 1;

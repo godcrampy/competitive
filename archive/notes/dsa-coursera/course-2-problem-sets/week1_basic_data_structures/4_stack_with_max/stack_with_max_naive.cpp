@@ -14,9 +14,7 @@ class StackWithMax {
   vector<int> stack;
 
  public:
-  void Push(int value) {
-    stack.push_back(value);
-  }
+  void Push(int value) { stack.push_back(value); }
 
   void Pop() {
     assert(stack.size());

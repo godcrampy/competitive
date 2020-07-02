@@ -18,7 +18,8 @@ int main(int argc, char const *argv[]) {
     cout << n << " ";
   }
   cout << endl;
-  auto b = partition_point(v.begin(), v.end(), [](int a) { return a % 2 == 0; });
+  auto b =
+      partition_point(v.begin(), v.end(), [](int a) { return a % 2 == 0; });
   cout << *a << endl;
   cout << *b << endl;
 

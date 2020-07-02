@@ -47,8 +47,7 @@ int main(int argc, char const *argv[]) {
 
 void heapify(long i, vector<thread> &threads) {
   long n = threads.size();
-  if (i >= n || i < 0)
-    return;
+  if (i >= n || i < 0) return;
   bool is_left_child = 2 * i + 1 < n;
   bool is_right_child = 2 * i + 2 < n;
   long swp_index = i;

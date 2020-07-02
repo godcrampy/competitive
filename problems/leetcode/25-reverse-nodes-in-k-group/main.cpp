@@ -9,12 +9,10 @@ struct ListNode {
 };
 
 bool are_next_k_not_null(ListNode* a, int k) {
-  if (a == NULL)
-    return false;
+  if (a == NULL) return false;
   for (int i = 0; i < k; ++i) {
     a = a->next;
-    if (a == NULL)
-      return false;
+    if (a == NULL) return false;
   }
   return true;
 }

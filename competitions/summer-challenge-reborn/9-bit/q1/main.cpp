@@ -8,13 +8,10 @@
 
 using namespace std;
 
-long lSBP(long long n) {
-  return (long)(log2(n));
-}
+long lSBP(long long n) { return (long)(log2(n)); }
 
 bool isKthBitSet(long long n, long k) {
-  if ((n >> (k)) & 1)
-    return true;
+  if ((n >> (k)) & 1) return true;
   return false;
 }
 

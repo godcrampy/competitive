@@ -10,10 +10,7 @@ class BinaryTreeNode {
   BinaryTreeNode* left_;
   BinaryTreeNode* right_;
 
-  BinaryTreeNode(int value) : value_(value),
-                              left_(nullptr),
-                              right_(nullptr) {
-  }
+  BinaryTreeNode(int value) : value_(value), left_(nullptr), right_(nullptr) {}
 
   ~BinaryTreeNode() {
     delete left_;
@@ -55,7 +52,8 @@ res isBalancedRec(const BinaryTreeNode* root, int depth) {
   res r;
   r.minDepth = newMin;
   r.maxDepth = newMax;
-  r.isBalanced = (newMax - newMin < 2) || root->left_ == NULL || root->right_ == NULL;
+  r.isBalanced =
+      (newMax - newMin < 2) || root->left_ == NULL || root->right_ == NULL;
   return r;
 }
 

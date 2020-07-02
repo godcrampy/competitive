@@ -9,9 +9,7 @@ class MyQueue {
   stack<int> r;
 
  public:
-  void add(int n) {
-    l.push(n);
-  }
+  void add(int n) { l.push(n); }
 
   int remove() {
     while (l.size() > 1) {
@@ -42,9 +40,7 @@ class MyQueue {
     return res;
   }
 
-  bool empty() {
-    return l.empty();
-  }
+  bool empty() { return l.empty(); }
 };
 
 int main(int argc, char const *argv[]) {

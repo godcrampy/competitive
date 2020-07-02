@@ -14,8 +14,7 @@ int main() {
   float n;
   while (true) {
     std::cin >> n;
-    if (n == 0.00)
-      break;
+    if (n == 0.00) break;
     std::cout << number_of_cards(n) << " card(s)" << std::endl;
   }
   return 0;

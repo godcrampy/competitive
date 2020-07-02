@@ -20,7 +20,8 @@ void printVector(const vector<int>& v, string msg) {
   cout << endl;
 }
 
-// ? Given an array C of size N-1 and given that there are numbers from 1 to N with one element missing, the missing number is to be found.
+// ? Given an array C of size N-1 and given that there are numbers from 1 to N
+// with one element missing, the missing number is to be found.
 
 int naiveApproach(const vector<int> v) {
   // * T: O(n^2) S: O(1)

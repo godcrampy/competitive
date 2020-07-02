@@ -24,8 +24,7 @@ class JobQueue {
     int m;
     cin >> num_workers_ >> m;
     jobs_.resize(m);
-    for (int i = 0; i < m; ++i)
-      cin >> jobs_[i];
+    for (int i = 0; i < m; ++i) cin >> jobs_[i];
   }
 
   void AssignJobs() {
@@ -37,8 +36,7 @@ class JobQueue {
       int duration = jobs_[i];
       int next_worker = 0;
       for (int j = 0; j < num_workers_; ++j) {
-        if (next_free_time[j] < next_free_time[next_worker])
-          next_worker = j;
+        if (next_free_time[j] < next_free_time[next_worker]) next_worker = j;
       }
       assigned_workers_[i] = next_worker;
       start_times_[i] = next_free_time[next_worker];

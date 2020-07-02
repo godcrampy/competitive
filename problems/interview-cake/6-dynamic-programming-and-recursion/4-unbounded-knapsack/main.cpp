@@ -10,9 +10,8 @@ class CakeType {
   const unsigned int weight_;
   const unsigned int value_;
 
-  CakeType(unsigned int weight = 0, unsigned int value = 0) : weight_(weight),
-                                                              value_(value) {
-  }
+  CakeType(unsigned int weight = 0, unsigned int value = 0)
+      : weight_(weight), value_(value) {}
 };
 
 unsigned long long maxDuffelBagValue(const std::vector<CakeType>& cakeTypes,
@@ -25,7 +24,9 @@ unsigned long long maxDuffelBagValue(const std::vector<CakeType>& cakeTypes,
       throw "";
     }
     for (unsigned int i = cake.weight_; i < dp.size(); ++i) {
-      dp[i] = dp[i] > dp[i - cake.weight_] + cake.value_ ? dp[i] : dp[i - cake.weight_] + cake.value_;
+      dp[i] = dp[i] > dp[i - cake.weight_] + cake.value_
+                  ? dp[i]
+                  : dp[i - cake.weight_] + cake.value_;
     }
   }
 

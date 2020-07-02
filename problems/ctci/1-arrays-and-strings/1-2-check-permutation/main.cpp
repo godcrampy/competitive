@@ -43,7 +43,8 @@ int main(int argc, char const *argv[]) {
   for (int i = 0; i < n; i++) {
     string a, b;
     cin >> a >> b;
-    cout << checkPermutationMap(a, b) << " " << checkPermutationSort(a, b) << endl;
+    cout << checkPermutationMap(a, b) << " " << checkPermutationSort(a, b)
+         << endl;
   }
   return 0;
 }

@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 #include <algorithm>
 #include <cmath>
 #include <iostream>
@@ -27,7 +28,7 @@ int main() {
         st.pop();
       } else {
         if (!st.empty() && array[i] > st.top()) {
-          //cout<<array[i]<<" "<<st.top()<<" "<<j<<endl;
+          // cout<<array[i]<<" "<<st.top()<<" "<<j<<endl;
           ans = false;
           break;
         } else

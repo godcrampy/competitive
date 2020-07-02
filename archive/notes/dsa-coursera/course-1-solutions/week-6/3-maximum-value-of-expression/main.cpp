@@ -66,8 +66,12 @@ long long maximum_value(string &expression) {
         long long m_r = min_table[k + 1][j];
         long long M_r = max_table[k + 1][j];
         char op = operations[k];
-        mini = minimum_of_five(mini, operate(m_l, op, m_r), operate(m_l, op, M_r), operate(M_l, op, m_r), operate(M_l, op, M_r));
-        maxi = maximum_of_five(maxi, operate(m_l, op, m_r), operate(m_l, op, M_r), operate(M_l, op, m_r), operate(M_l, op, M_r));
+        mini =
+            minimum_of_five(mini, operate(m_l, op, m_r), operate(m_l, op, M_r),
+                            operate(M_l, op, m_r), operate(M_l, op, M_r));
+        maxi =
+            maximum_of_five(maxi, operate(m_l, op, m_r), operate(m_l, op, M_r),
+                            operate(M_l, op, m_r), operate(M_l, op, M_r));
       }
       max_table[i][j] = maxi;
       min_table[i][j] = mini;

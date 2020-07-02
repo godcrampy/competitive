@@ -2,7 +2,8 @@
 #include <string>
 #include <vector>
 
-void fill_matrix(std::vector<std::vector<char>> &matrix, int rows, int columns, std::string string) {
+void fill_matrix(std::vector<std::vector<char>> &matrix, int rows, int columns,
+                 std::string string) {
   bool fill_left_to_right = true;
   int string_iterator = 0;
   for (int i = 0; i < rows; i++) {
@@ -20,18 +21,18 @@ void fill_matrix(std::vector<std::vector<char>> &matrix, int rows, int columns, 
   }
 }
 
-void print_matrix(std::vector<std::vector<char>> &matrix, int rows, int columns) {
+void print_matrix(std::vector<std::vector<char>> &matrix, int rows,
+                  int columns) {
   for (int i = 0; i < rows; i++) {
-    for (int j = 0; j < columns; j++)
-      std::cout << matrix.at(i).at(j) << " ";
+    for (int j = 0; j < columns; j++) std::cout << matrix.at(i).at(j) << " ";
     std::cout << std::endl;
   }
 }
 
-void decipher_text(std::vector<std::vector<char>> matrix, int rows, int columns) {
+void decipher_text(std::vector<std::vector<char>> matrix, int rows,
+                   int columns) {
   for (int i = 0; i < columns; ++i)
-    for (int j = 0; j < rows; ++j)
-      std::cout << matrix.at(j).at(i);
+    for (int j = 0; j < rows; ++j) std::cout << matrix.at(j).at(i);
   std::cout << std::endl;
 }
 
@@ -40,15 +41,13 @@ int main(int argc, char const *argv[]) {
   std::string cipher;
   while (true) {
     std::cin >> columns;
-    if (columns == 0)
-      break;
+    if (columns == 0) break;
     getchar();
     getline(std::cin, cipher);
     int rows = cipher.length() / columns;
     std::vector<std::vector<char>> matrix;
     matrix.resize(rows);
-    for (int i = 0; i < rows; i++)
-      matrix.at(i).resize(columns);
+    for (int i = 0; i < rows; i++) matrix.at(i).resize(columns);
     fill_matrix(matrix, rows, columns, cipher);
     decipher_text(matrix, rows, columns);
   }

@@ -1,6 +1,6 @@
 #include <iostream>
-#include <unordered_set>
 #include <string>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -47,7 +47,8 @@ int main(int argc, char const *argv[]) {
   for (int i = 0; i < n; ++i) {
     string s;
     cin >> s;
-    cout << isUniqueSet(s) << " " << isUniqueVector(s) << " " << isUniqueBit(s) << endl;
+    cout << isUniqueSet(s) << " " << isUniqueVector(s) << " " << isUniqueBit(s)
+         << endl;
   }
   // * Other possible solutions
   // * Brute Force: Time => O(n^2), Space => O(1)

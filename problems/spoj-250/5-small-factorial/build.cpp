@@ -19,13 +19,11 @@ auto *multiplyBigInt(int *bigInt, int &length, int number) {
 
 void factorial(int *bigInt, int &length, int number) {
   // asumes bigint is set to zero
-  for (int i = 2; i <= number; i++)
-    multiplyBigInt(bigInt, length, i);
+  for (int i = 2; i <= number; i++) multiplyBigInt(bigInt, length, i);
 }
 
 void printBigInt(int *bigInt, int length) {
-  for (int i = length - 1; i >= 0; --i)
-    cout << *(bigInt + i);
+  for (int i = length - 1; i >= 0; --i) cout << *(bigInt + i);
   cout << endl;
 }
 

@@ -3,7 +3,8 @@
 
 using namespace std;
 
-// * Book presents 2 solutions, first is allocating one third space to each stack
+// * Book presents 2 solutions, first is allocating one third space to each
+// stack
 // * Second is to use dynamic space which is out of the scope of the interview
 // * Here's a 2 stack implementation
 
@@ -21,13 +22,9 @@ class BiStack {
     this->r = v.size() - 1;
   }
 
-  T topLeft() {
-    return this->v[this->l];
-  }
+  T topLeft() { return this->v[this->l]; }
 
-  T topRight() {
-    return this->v[this->r];
-  }
+  T topRight() { return this->v[this->r]; }
 
   void pushLeft(T a) {
     if (l < r - 1) {
@@ -41,21 +38,13 @@ class BiStack {
     }
   }
 
-  void popLeft() {
-    --l;
-  }
+  void popLeft() { --l; }
 
-  void popRight() {
-    ++r;
-  }
+  void popRight() { ++r; }
 
-  int sizeLeft() {
-    return l;
-  }
+  int sizeLeft() { return l; }
 
-  int sizeRight() {
-    return v.size() - r;
-  }
+  int sizeRight() { return v.size() - r; }
 };
 
 int main(int argc, char const *argv[]) {

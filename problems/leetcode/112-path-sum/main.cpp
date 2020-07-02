@@ -16,5 +16,6 @@ bool hasPathSum(TreeNode *root, int sum) {
     return root->val == sum;
   }
 
-  return hasPathSum(root->left, sum - root->val) || hasPathSum(root->right, sum - root->val);
+  return hasPathSum(root->left, sum - root->val) ||
+         hasPathSum(root->right, sum - root->val);
 }

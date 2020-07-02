@@ -67,8 +67,7 @@ void process_packets(std::queue<Packet> &stream, int size, int stream_size) {
   //     status[new_process[POSITION]] = process_finishing_time;
   //   }
   // }
-  for (auto time : status)
-    std::cout << time << std::endl;
+  for (auto time : status) std::cout << time << std::endl;
 }
 
 int main(int argc, char const *argv[]) {

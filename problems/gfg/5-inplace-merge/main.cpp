@@ -19,11 +19,11 @@ void printVector(const vector<int> &v, string msg) {
   cout << endl;
 }
 
-// ? Given two sorted arrays arr1[] and arr2[] in non-decreasing order with size n and m. The task is to merge the two sorted arrays into one sorted array (in non-decreasing order).
+// ? Given two sorted arrays arr1[] and arr2[] in non-decreasing order with size
+// n and m. The task is to merge the two sorted arrays into one sorted array (in
+// non-decreasing order).
 
-int nextGap(int n) {
-  return n <= 1 ? 0 : (n + 1) / 2;
-}
+int nextGap(int n) { return n <= 1 ? 0 : (n + 1) / 2; }
 
 void swapArrays(vector<int> &a, vector<int> &b, int i, int j) {
   int m = a.size(), n = b.size();
@@ -34,18 +34,15 @@ void swapArrays(vector<int> &a, vector<int> &b, int i, int j) {
 
   if (i >= m) {
     // both in second slot
-    if (b[i - m] > b[j - m])
-      swap(b[i - m], b[j - m]);
+    if (b[i - m] > b[j - m]) swap(b[i - m], b[j - m]);
   } else {
     // i in first
     if (j >= m) {
       // j in second, i in first
-      if (a[i] > b[j - m])
-        swap(a[i], b[j - m]);
+      if (a[i] > b[j - m]) swap(a[i], b[j - m]);
     } else {
       // both in first
-      if (a[i] > a[j])
-        swap(a[i], a[j]);
+      if (a[i] > a[j]) swap(a[i], a[j]);
     }
   }
 }

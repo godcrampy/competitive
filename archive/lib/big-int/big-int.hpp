@@ -11,21 +11,22 @@
  *
  * * A Custom made class for doing arithmetic and comparisions of very
  * * large numbers in C++
- * 
+ *
  * ! Not Complete
  * ! All Operations assume positive numbers
  * Current Implementation provides the following operations:
  * 1. BigInt ? BigInt: addition, subtraction
  * 2. BigInt ? Integer: addition, division
- * 
+ *
  * ? private member string will store 541 as "541",
  * ? private member number will store 541 as [1, 4, 5, 0, 0 ,...]
  * ? private member size is vector number
- * 
- * Although vectors are dynamic, the private member number will stay of the same size,
- * this was done to reduce implementation complexity of various operations. This also
- * gives added benefit of vector not being re-allocated internally to fit additional
- * integers thus reducing compute time at the cost of some space in memory.
+ *
+ * Although vectors are dynamic, the private member number will stay of the same
+ * size, this was done to reduce implementation complexity of various
+ * operations. This also gives added benefit of vector not being re-allocated
+ * internally to fit additional integers thus reducing compute time at the cost
+ * of some space in memory.
  */
 
 class BigInteger {
@@ -51,22 +52,20 @@ class BigInteger {
   BigInteger operator/(int integer);
 };
 
-BigInteger::BigInteger(std::string string, int size) : string{string}, number{std::vector<int>(size, 0)}, size{size} {
+BigInteger::BigInteger(std::string string, int size)
+    : string{string}, number{std::vector<int>(size, 0)}, size{size} {
   this->string_to_integer();
 }
 
-BigInteger::BigInteger(int number, int size) : BigInteger(std::to_string(number), size) {
-}
+BigInteger::BigInteger(int number, int size)
+    : BigInteger(std::to_string(number), size) {}
 
-void BigInteger::set_string(std::string string) {
-  this->string = string;
-}
+void BigInteger::set_string(std::string string) { this->string = string; }
 
 int BigInteger::get_MSB_position() {
   int first_place = 0;
   for (int i = 0; i < this->size; i++)
-    if (this->number.at(i) != 0)
-      first_place = i;
+    if (this->number.at(i) != 0) first_place = i;
   return first_place;
 }
 

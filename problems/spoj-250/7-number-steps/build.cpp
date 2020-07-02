@@ -2,13 +2,9 @@
 
 using namespace std;
 
-bool isValid(int x, int y) {
-  return x == y || x - y == 2 ? true : false;
-}
+bool isValid(int x, int y) { return x == y || x - y == 2 ? true : false; }
 
-int getNumber(int x, int y) {
-  return x % 2 == 0 ? x + y : x + y - 1;
-}
+int getNumber(int x, int y) { return x % 2 == 0 ? x + y : x + y - 1; }
 
 int main(int argc, char const *argv[]) {
   int t, x, y;

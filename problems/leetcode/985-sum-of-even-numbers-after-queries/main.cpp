@@ -6,8 +6,7 @@ vector<int> sumEvenAfterQueries(vector<int>& A, vector<vector<int>>& queries) {
   int sum = 0;
 
   for (int n : A) {
-    if (n % 2 == 0)
-      sum += n;
+    if (n % 2 == 0) sum += n;
   }
 
   vector<int> res;

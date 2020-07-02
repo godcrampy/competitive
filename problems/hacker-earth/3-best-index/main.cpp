@@ -3,7 +3,8 @@
 #include <iostream>
 #include <vector>
 
-auto get_prefix(std::vector<long long> &array, std::vector<long long> &prefix_sum) {
+auto get_prefix(std::vector<long long> &array,
+                std::vector<long long> &prefix_sum) {
   // * works
   prefix_sum = {};
   long long sum = 0;
@@ -18,9 +19,9 @@ long number_of_allowed_charecters(long space) {
   return (final) * (final + 1) / 2;
 }
 
-long long get_prefix_sum(const std::vector<long long> &prefix, long start, long end) {
-  if (start == 0)
-    return prefix.at(end);
+long long get_prefix_sum(const std::vector<long long> &prefix, long start,
+                         long end) {
+  if (start == 0) return prefix.at(end);
   return prefix.at(end) - prefix.at(start - 1);
 }
 
@@ -34,8 +35,7 @@ long get_best_index(std::vector<long long> &prefix) {
   long max = LONG_MIN;
   for (auto i = 0; i < size; ++i) {
     long temp = get_special_sum(prefix, i);
-    if (temp > max)
-      max = temp;
+    if (temp > max) max = temp;
   }
   return max;
 }

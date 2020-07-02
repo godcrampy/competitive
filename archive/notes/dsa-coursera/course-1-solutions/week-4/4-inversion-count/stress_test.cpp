@@ -1,4 +1,5 @@
 #include <stdlib.h>
+
 #include <algorithm>
 #include <iostream>
 #include <vector>
@@ -31,8 +32,7 @@ void merge(std::vector<long> &vector, int l, int m, int r) {
 }
 
 void merge_sort(std::vector<long> &vector, int l, int r) {
-  if (l >= r)
-    return;
+  if (l >= r) return;
   int mid = (l + r) / 2;
   merge_sort(vector, l, mid);
   merge_sort(vector, mid + 1, r);
@@ -43,16 +43,13 @@ int main(int argc, char const *argv[]) {
   while (true) {
     int n = rand() % 100000 + 1;
     std::vector<long> test;
-    for (auto i = 0; i < n; ++i)
-      test.push_back(rand() % 1000000000 + 1);
+    for (auto i = 0; i < n; ++i) test.push_back(rand() % 1000000000 + 1);
     auto copy = test;
     merge_sort(test, 0, test.size() - 1);
     std::sort(copy.begin(), copy.end());
-    for (auto number : test)
-      std::cout << number << " ";
+    for (auto number : test) std::cout << number << " ";
     std::cout << std::endl;
-    if (copy != test)
-      break;
+    if (copy != test) break;
   }
   return 0;
 }

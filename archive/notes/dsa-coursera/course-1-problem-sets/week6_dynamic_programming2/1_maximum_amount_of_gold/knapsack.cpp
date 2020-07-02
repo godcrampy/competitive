@@ -4,7 +4,7 @@
 using std::vector;
 
 int optimal_weight(int W, const vector<int> &w) {
-  //write your code here
+  // write your code here
   int current_weight = 0;
   for (size_t i = 0; i < w.size(); ++i) {
     if (current_weight + w[i] <= W) {

@@ -13,7 +13,8 @@ using std::vector;
 struct DisjointSetsElement {
   int size, parent, rank;
 
-  DisjointSetsElement(int size = 0, int parent = -1, int rank = 0) : size(size), parent(parent), rank(rank) {}
+  DisjointSetsElement(int size = 0, int parent = -1, int rank = 0)
+      : size(size), parent(parent), rank(rank) {}
 };
 
 struct DisjointSets {
@@ -22,8 +23,7 @@ struct DisjointSets {
   vector<DisjointSetsElement> sets;
 
   DisjointSets(int size) : size(size), max_table_size(0), sets(size) {
-    for (int i = 0; i < size; i++)
-      sets[i].parent = i;
+    for (int i = 0; i < size; i++) sets[i].parent = i;
   }
 
   int getParent(int table) {

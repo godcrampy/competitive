@@ -1,9 +1,7 @@
 #include <cmath>
 #include <iostream>
 
-long number_of_kids(long n) {
-  return (std::sqrt(1 + 8 * n) - 1) / 2;
-}
+long number_of_kids(long n) { return (std::sqrt(1 + 8 * n) - 1) / 2; }
 
 int main(int argc, char const *argv[]) {
   /* code */

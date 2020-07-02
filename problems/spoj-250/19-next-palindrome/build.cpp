@@ -4,8 +4,7 @@
 
 bool is_all_nines(const std::string &input) {
   for (auto charecter : input)
-    if (charecter != '9')
-      return false;
+    if (charecter != '9') return false;
   return true;
 }
 std::string next_palindrome_odd(std::string input) {
@@ -13,9 +12,9 @@ std::string next_palindrome_odd(std::string input) {
   int midpoint = length / 2;  // 423 => 4 *2* 3
   std::string reverse = input, final = input;
   std::reverse(reverse.begin(), reverse.end());
-  std::copy(reverse.begin() + midpoint + 1, reverse.end(), final.begin() + midpoint + 1);
-  if (final > input)
-    return final;
+  std::copy(reverse.begin() + midpoint + 1, reverse.end(),
+            final.begin() + midpoint + 1);
+  if (final > input) return final;
   int iterator = midpoint;
   while (input.at(iterator) == '9') {
     input.at(iterator) = '0';
@@ -24,7 +23,8 @@ std::string next_palindrome_odd(std::string input) {
   input.at(iterator) = input.at(iterator) + 1;
   final = input;
   std::reverse(input.begin(), input.end());
-  std::copy(input.begin() + midpoint + 1, input.end(), final.begin() + midpoint + 1);
+  std::copy(input.begin() + midpoint + 1, input.end(),
+            final.begin() + midpoint + 1);
   return final;
 }
 
@@ -33,9 +33,9 @@ std::string next_palindrome_even(std::string input) {
   int midpoint = length / 2 - 1;  // 4242 => 4 *2* 4 2
   std::string reverse = input, final = input;
   std::reverse(reverse.begin(), reverse.end());
-  std::copy(reverse.begin() + midpoint + 1, reverse.end(), final.begin() + midpoint + 1);
-  if (final > input)
-    return final;
+  std::copy(reverse.begin() + midpoint + 1, reverse.end(),
+            final.begin() + midpoint + 1);
+  if (final > input) return final;
   int iterator = midpoint;
   while (input.at(iterator) == '9') {
     input.at(iterator) = '0';
@@ -44,7 +44,8 @@ std::string next_palindrome_even(std::string input) {
   input.at(iterator) = input.at(iterator) + 1;
   final = input;
   std::reverse(input.begin(), input.end());
-  std::copy(input.begin() + midpoint + 1, input.end(), final.begin() + midpoint + 1);
+  std::copy(input.begin() + midpoint + 1, input.end(),
+            final.begin() + midpoint + 1);
   return final;
 }
 

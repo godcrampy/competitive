@@ -13,10 +13,8 @@ class Pair {
 };
 
 bool test_pairs(const Pair &a, const Pair &b) {
-  if (a.initial <= b.initial && a.final < b.final)
-    return true;
-  if (b.initial <= a.initial && b.final < a.final)
-    return true;
+  if (a.initial <= b.initial && a.final < b.final) return true;
+  if (b.initial <= a.initial && b.final < a.final) return true;
   return false;
 }
 
@@ -28,8 +26,7 @@ int number_of_bars(std::vector<Pair> &list) {
     Pair test = list.back();
     list.pop_back();
     for (Pair i : final) {
-      if (!test_pairs(i, test))
-        break;
+      if (!test_pairs(i, test)) break;
     }
     final.push_back(test);
   }

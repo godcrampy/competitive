@@ -5,7 +5,7 @@ using std::vector;
 
 vector<int> optimal_summands(int n) {
   vector<int> summands;
-  //write your code here
+  // write your code here
   return summands;
 }
 

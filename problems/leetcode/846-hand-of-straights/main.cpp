@@ -9,7 +9,8 @@ bool isNStraightHand(vector<int>& hand, int W) {
   map<int, int> m;
 
   for (int i : hand) {
-    ++m[i];  // if m[i] does not exists, accessing m[i] inserts {i, 0} by default
+    ++m[i];  // if m[i] does not exists, accessing m[i] inserts {i, 0} by
+             // default
   }
 
   while (!m.empty()) {

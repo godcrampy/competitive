@@ -22,7 +22,8 @@ void printVector(const vector<int>& v, string msg) {
   cout << endl;
 }
 
-// ? Given an array of distinct integers, count all the triplets such that sum of two elements equals the third element.
+// ? Given an array of distinct integers, count all the triplets such that sum
+// of two elements equals the third element.
 
 set<vector<int>> naiveApproach(const vector<int>& v) {
   // * T:O(n^3) S:O(n)

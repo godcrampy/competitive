@@ -3,7 +3,8 @@
 using namespace std;
 
 bool is_skip(char c) {
-  return !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'));
+  return !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') ||
+           (c >= '0' && c <= '9'));
 }
 
 bool equal(char a, char b) {

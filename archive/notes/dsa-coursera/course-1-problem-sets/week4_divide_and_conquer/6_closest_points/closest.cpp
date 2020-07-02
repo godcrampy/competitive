@@ -12,7 +12,7 @@ using std::string;
 using std::vector;
 
 double minimal_distance(vector<int> x, vector<int> y) {
-  //write your code here
+  // write your code here
   return 0.;
 }
 

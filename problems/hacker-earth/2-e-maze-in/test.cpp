@@ -5,8 +5,7 @@ int main(int argc, char const *argv[]) {
   int x = 0, y = 0;
   std::string path;
   std::getline(std::cin, path);
-  for (auto charecter : path)
-    switch (charecter) {
+  for (auto charecter : path) switch (charecter) {
       case ('L'):
         --x;
         break;

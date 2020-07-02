@@ -9,7 +9,8 @@ void solve() {
   int n, m, k;
   cin >> n >> m >> k;
 
-  unordered_map<int, pair<long, int>> rows, columns;  // row_number => {color, priority}
+  unordered_map<int, pair<long, int>> rows,
+      columns;  // row_number => {color, priority}
   for (int i = 0; i < n; ++i) {
     rows[i] = {0, -1};
   }

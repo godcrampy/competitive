@@ -7,12 +7,9 @@ using namespace std;
 
 // ! IMP
 
-
-bool get_path(
-    vector<vector<bool>> m,
-    int r, int c,
-    set<pair<int, int>> &failed_points,
-    vector<pair<int, int>> &path) {
+bool get_path(vector<vector<bool>> m, int r, int c,
+              set<pair<int, int>> &failed_points,
+              vector<pair<int, int>> &path) {
   if (r == 0 && c == 0) {
     path.push_back({r, c});
     return true;
@@ -26,7 +23,8 @@ bool get_path(
     return false;
   }
 
-  if (get_path(m, r - 1, c, failed_points, path) || get_path(m, r, c - 1, failed_points, path)) {
+  if (get_path(m, r - 1, c, failed_points, path) ||
+      get_path(m, r, c - 1, failed_points, path)) {
     path.push_back({r, c});
     return true;
   }
@@ -40,7 +38,8 @@ vector<pair<int, int>> get_path(vector<vector<bool>> matrix) {
   // * Space: O(RC)
   set<pair<int, int>> failed_points;
   vector<pair<int, int>> path;
-  if (get_path(matrix, matrix.size() - 1, matrix[0].size() - 1, failed_points, path)) {
+  if (get_path(matrix, matrix.size() - 1, matrix[0].size() - 1, failed_points,
+               path)) {
     return path;
   }
   return {};

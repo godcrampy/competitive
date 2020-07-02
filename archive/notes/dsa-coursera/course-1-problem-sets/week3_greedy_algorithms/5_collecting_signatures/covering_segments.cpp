@@ -11,7 +11,7 @@ struct Segment {
 
 vector<int> optimal_points(vector<Segment> &segments) {
   vector<int> points;
-  //write your code here
+  // write your code here
   for (size_t i = 0; i < segments.size(); ++i) {
     points.push_back(segments[i].start);
     points.push_back(segments[i].end);

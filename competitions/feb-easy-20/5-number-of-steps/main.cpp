@@ -38,7 +38,7 @@ int main(int argc, char const *argv[]) {
     for (int i = 0; i < n; ++i) {
       if (a[i] > min) {
         int diff = a[i] - min;
-        if(b[i] == 0){
+        if (b[i] == 0) {
           continue;
         }
         int times = diff / b[i];

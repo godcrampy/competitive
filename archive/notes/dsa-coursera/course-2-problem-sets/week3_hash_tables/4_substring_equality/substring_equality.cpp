@@ -9,9 +9,7 @@ class Solver {
   Solver(string s) : s(s) {
     // initialization, precalculation
   }
-  bool ask(int a, int b, int l) {
-    return s.substr(a, l) == s.substr(b, l);
-  }
+  bool ask(int a, int b, int l) { return s.substr(a, l) == s.substr(b, l); }
 };
 
 int main() {

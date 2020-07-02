@@ -13,7 +13,8 @@ struct TreeNode {
 
 // ! IMP Weave
 
-void weave(list<int> first, list<int> second, list<int> prefix, vector<list<int>>& result) {
+void weave(list<int> first, list<int> second, list<int> prefix,
+           vector<list<int>>& result) {
   if (first.size() == 0 || second.size() == 0) {
     prefix.insert(prefix.end(), first.begin(), first.end());
     prefix.insert(prefix.end(), second.begin(), second.end());

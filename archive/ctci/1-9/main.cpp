@@ -2,9 +2,7 @@
 
 using namespace std;
 
-bool is_substring(string s, string a) {
-  return s.find(a) != s.npos;
-}
+bool is_substring(string s, string a) { return s.find(a) != s.npos; }
 
 bool are_strings_rotated(string s1, string s2) {
   string s1s1 = s1 + s1;

@@ -7,7 +7,8 @@
 
 using namespace std;
 
-vector<string> reconstructPath(const unordered_map<string, string>& previousNodes, const string& endNode) {
+vector<string> reconstructPath(
+    const unordered_map<string, string>& previousNodes, const string& endNode) {
   vector<string> reversedShortestPath;
 
   // start from the end of the path and work backwards

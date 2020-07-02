@@ -10,10 +10,7 @@ class BinaryTreeNode {
   BinaryTreeNode* left_;
   BinaryTreeNode* right_;
 
-  BinaryTreeNode(int value) : value_(value),
-                              left_(nullptr),
-                              right_(nullptr) {
-  }
+  BinaryTreeNode(int value) : value_(value), left_(nullptr), right_(nullptr) {}
 
   ~BinaryTreeNode() {
     delete left_;

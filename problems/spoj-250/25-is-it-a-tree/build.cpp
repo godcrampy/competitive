@@ -7,13 +7,11 @@ int main() {
   std::cin >> number_of_nodes >> number_of_edges;
   int a, b;
   if (number_of_nodes - number_of_edges == 1) {
-    for (auto i = 0; i <= number_of_nodes; ++i)
-      list.push_back(i);
+    for (auto i = 0; i <= number_of_nodes; ++i) list.push_back(i);
     for (auto i = 0; i < number_of_edges; ++i) {
       std::cin >> a >> b;
       for (auto j = 0; j <= number_of_nodes; ++j)
-        if (list[j] == b)
-          list[j] = list[a];
+        if (list[j] == b) list[j] = list[a];
     }
     bool flag = true;
     for (auto i = 1; i < number_of_nodes; ++i)

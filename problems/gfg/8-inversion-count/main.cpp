@@ -22,7 +22,8 @@ void printVector(const vector<T>& v, string msg) {
   cout << endl;
 }
 
-// ? Given an array of positive integers. The task is to find inversion count of array. Two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
+// ? Given an array of positive integers. The task is to find inversion count of
+// array. Two elements a[i] and a[j] form an inversion if a[i] > a[j] and i < j.
 
 long naiveApproach(vector<long long>& v) {
   // * T:O(n^2) S:O(1)

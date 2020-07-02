@@ -33,8 +33,7 @@ void _swap(long &a, long &b) {
 
 void heapify(long i, vector<long> &array, vector<pair<long, long>> &list) {
   int n = array.size();
-  if (i >= n || i < 0)
-    return;
+  if (i >= n || i < 0) return;
   bool is_left_child = 2 * i + 1 < n;
   bool is_right_child = 2 * i + 2 < n;
   unsigned long swp_index = i;

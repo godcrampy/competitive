@@ -237,7 +237,8 @@ int distance_from_root(node* root, int data) {
 }
 
 bool are_siblings(node* root, int a, int b) {
-  if (distance_from_root(root, a) == distance_from_root(root, b) && search_parent_node(root, a) == search_parent_node(root, b)) {
+  if (distance_from_root(root, a) == distance_from_root(root, b) &&
+      search_parent_node(root, a) == search_parent_node(root, b)) {
     return true;
   }
   return false;

@@ -44,8 +44,10 @@ bool isMatch(string s, string p) {
       if (char_at(p, i) == char_at(s, j) || char_at(p, i) == '.') {
         val = table[i - 1][j - 1];
       } else if (char_at(p, i) == '*') {
-        val = table[i - 2][j] ||  // zero occurrences
-              ((char_at(s, j) == char_at(p, i - 1) || char_at(p, i - 1) == '.') && table[i][j - 1]);
+        val =
+            table[i - 2][j] ||  // zero occurrences
+            ((char_at(s, j) == char_at(p, i - 1) || char_at(p, i - 1) == '.') &&
+             table[i][j - 1]);
       } else {
         val = false;
       }

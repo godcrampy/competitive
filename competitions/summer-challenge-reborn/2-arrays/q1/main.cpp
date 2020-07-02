@@ -5,8 +5,7 @@
 
 using namespace std;
 
-void solve() {
-}
+void solve() {}
 
 int main(int argc, char const *argv[]) {
   int n, k;

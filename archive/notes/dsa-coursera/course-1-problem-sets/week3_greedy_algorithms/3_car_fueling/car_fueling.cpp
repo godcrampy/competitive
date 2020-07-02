@@ -20,8 +20,7 @@ int main() {
   cin >> n;
 
   vector<int> stops(n);
-  for (size_t i = 0; i < n; ++i)
-    cin >> stops.at(i);
+  for (size_t i = 0; i < n; ++i) cin >> stops.at(i);
 
   cout << compute_min_refills(d, m, stops) << "\n";
 

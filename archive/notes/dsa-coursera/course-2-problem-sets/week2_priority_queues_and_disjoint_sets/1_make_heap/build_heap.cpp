@@ -25,8 +25,7 @@ class HeapBuilder {
     int n;
     cin >> n;
     data_.resize(n);
-    for (int i = 0; i < n; ++i)
-      cin >> data_[i];
+    for (int i = 0; i < n; ++i) cin >> data_[i];
   }
 
   void GenerateSwaps() {

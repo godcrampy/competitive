@@ -16,9 +16,10 @@ int main(int argc, char const* argv[]) {
     cin >> temp;
     arr[i] = {i, temp};
   }
-  stable_sort(arr.begin(), arr.end(), [](const pair<int, int>& a, const pair<int, int>& b) {
-    return a.second < b.second;
-  });
+  stable_sort(arr.begin(), arr.end(),
+              [](const pair<int, int>& a, const pair<int, int>& b) {
+                return a.second < b.second;
+              });
   for (auto p : arr) {
     cout << p.first << " ";
   }

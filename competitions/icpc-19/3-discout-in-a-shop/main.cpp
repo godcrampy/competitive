@@ -3,12 +3,10 @@
 
 void build_lowest_recursive(std::string str, std::string &res) {
   int len = str.length();
-  if (len <= 1)
-    return;
+  if (len <= 1) return;
   int minIndex = 0;
   for (int i = 1; i <= 1; i++)
-    if (str[i] < str[minIndex])
-      minIndex = i;
+    if (str[i] < str[minIndex]) minIndex = i;
   res.push_back(str[minIndex]);
   std::string new_str = str.substr(minIndex + 1, len - minIndex);
   build_lowest_recursive(new_str, res);

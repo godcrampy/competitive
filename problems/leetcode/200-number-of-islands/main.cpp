@@ -15,7 +15,8 @@ int numIslands(vector<vector<char>>& grid) {
 }
 
 void bfs_clear(vector<vector<char>>& grid, int i, int j) {
-  if (i < 0 || i >= grid.size() || j < 0 || j >= grid[i].size() || grid[i][j] == '0') {
+  if (i < 0 || i >= grid.size() || j < 0 || j >= grid[i].size() ||
+      grid[i][j] == '0') {
     return;
   }
 

@@ -8,9 +8,7 @@ class LinkedListNode {
   int intValue_;
   LinkedListNode* next_;
 
-  LinkedListNode(int value) : intValue_(value),
-                              next_(nullptr) {
-  }
+  LinkedListNode(int value) : intValue_(value), next_(nullptr) {}
 };
 
 bool containsCycle(const LinkedListNode* firstNode) {

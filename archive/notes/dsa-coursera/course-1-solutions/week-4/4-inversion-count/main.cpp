@@ -32,8 +32,7 @@ int merge(std::vector<long> &vector, int l, int m, int r) {
 }
 
 int merge_sort(std::vector<long> &vector, int l, int r) {
-  if (l >= r)
-    return 0;
+  if (l >= r) return 0;
   int mid = (l + r) / 2;
   int count = 0;
   count += merge_sort(vector, l, mid);

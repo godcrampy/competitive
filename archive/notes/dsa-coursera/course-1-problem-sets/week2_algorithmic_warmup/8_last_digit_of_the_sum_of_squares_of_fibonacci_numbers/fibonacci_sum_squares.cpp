@@ -1,8 +1,7 @@
 #include <iostream>
 
 int fibonacci_sum_squares_naive(long long n) {
-  if (n <= 1)
-    return n;
+  if (n <= 1) return n;
 
   long long previous = 0;
   long long current = 1;

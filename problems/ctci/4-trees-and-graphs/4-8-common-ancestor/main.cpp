@@ -13,7 +13,8 @@ struct TreeNode {
 
 // ! IMP Common Ancestor
 
-pair<bool, TreeNode*> common_ancestor(TreeNode* head, TreeNode* p, TreeNode* q) {
+pair<bool, TreeNode*> common_ancestor(TreeNode* head, TreeNode* p,
+                                      TreeNode* q) {
   // * Time: O(n)
   // * Space: O(n)
   // Returns {true, ancestor} if found in subtree

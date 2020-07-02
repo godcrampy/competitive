@@ -46,19 +46,17 @@ class QueryProcessor {
     if (query.type == "check") {
       // use reverse order, because we append strings to the end
       for (int i = static_cast<int>(elems.size()) - 1; i >= 0; --i)
-        if (hash_func(elems[i]) == query.ind)
-          std::cout << elems[i] << " ";
+        if (hash_func(elems[i]) == query.ind) std::cout << elems[i] << " ";
       std::cout << "\n";
     } else {
-      vector<string>::iterator it = std::find(elems.begin(), elems.end(), query.s);
+      vector<string>::iterator it =
+          std::find(elems.begin(), elems.end(), query.s);
       if (query.type == "find")
         writeSearchResult(it != elems.end());
       else if (query.type == "add") {
-        if (it == elems.end())
-          elems.push_back(query.s);
+        if (it == elems.end()) elems.push_back(query.s);
       } else if (query.type == "del") {
-        if (it != elems.end())
-          elems.erase(it);
+        if (it != elems.end()) elems.erase(it);
       }
     }
   }
@@ -66,8 +64,7 @@ class QueryProcessor {
   void processQueries() {
     int n;
     cin >> n;
-    for (int i = 0; i < n; ++i)
-      processQuery(readQuery());
+    for (int i = 0; i < n; ++i) processQuery(readQuery());
   }
 };
 

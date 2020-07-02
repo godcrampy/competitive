@@ -24,7 +24,8 @@ void nextPermutation(vector<int>& nums) {
     return;
   }
 
-  // find first smallest number larger than nums[i - 1] in the decreasing sequence
+  // find first smallest number larger than nums[i - 1] in the decreasing
+  // sequence
   int j = nums.size() - 1;
 
   while (j != 0 && nums[j] <= nums[i - 1]) {

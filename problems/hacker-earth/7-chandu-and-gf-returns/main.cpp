@@ -19,9 +19,8 @@ int main(int argc, char const *argv[]) {
     for (int i = 0; i < n; ++i) {
       cin >> arr2[i];
     }
-    merge(arr1.begin(), arr1.end(), arr2.begin(), arr2.end(), arr3.begin(), [](const int &a, const int &b) {
-      return b < a;
-    });
+    merge(arr1.begin(), arr1.end(), arr2.begin(), arr2.end(), arr3.begin(),
+          [](const int &a, const int &b) { return b < a; });
     for (auto n : arr3) {
       cout << n << " ";
     }

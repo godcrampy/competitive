@@ -4,7 +4,7 @@
 using namespace std;
 
 bool isValidSudoku(vector<vector<char>>& board) {
-  for (int i = 0; i < board.size(); i++)  //check row
+  for (int i = 0; i < board.size(); i++)  // check row
   {
     set<char> sudoku;
     for (int j = 0; j < board[i].size(); j++) {
@@ -16,7 +16,7 @@ bool isValidSudoku(vector<vector<char>>& board) {
     }
   }
 
-  for (int col = 0; col < 9; col++)  //check col
+  for (int col = 0; col < 9; col++)  // check col
   {
     set<char> sudoku;
     for (int row = 0; row < 9; row++) {
@@ -28,8 +28,9 @@ bool isValidSudoku(vector<vector<char>>& board) {
     }
   }
 
-  vector<vector<int>> dir{{0, 0}, {0, 3}, {0, 6}, {3, 0}, {6, 0}, {3, 3}, {3, 6}, {6, 3}, {6, 6}};  //direction
-  for (vector<int> it : dir)                                                                        //for each box
+  vector<vector<int>> dir{{0, 0}, {0, 3}, {0, 6}, {3, 0}, {6, 0},
+                          {3, 3}, {3, 6}, {6, 3}, {6, 6}};  // direction
+  for (vector<int> it : dir)                                // for each box
   {
     set<char> sudoku;
     for (int i = 0; i < 3; i++) {

@@ -40,15 +40,10 @@ void rotateMatrix(vector<vector<int>>& m) {
 
 int main(int argc, char const* argv[]) {
   vector<vector<int>> a = {{1}};
-  vector<vector<int>> b = {{1, 2},
-                           {3, 4}};
-  vector<vector<int>> c = {{1, 2, 3},
-                           {4, 5, 6},
-                           {7, 8, 9}};
-  vector<vector<int>> d = {{1, 2, 3, 4},
-                           {5, 6, 7, 8},
-                           {9, 10, 11, 12},
-                           {13, 14, 15, 16}};
+  vector<vector<int>> b = {{1, 2}, {3, 4}};
+  vector<vector<int>> c = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  vector<vector<int>> d = {
+      {1, 2, 3, 4}, {5, 6, 7, 8}, {9, 10, 11, 12}, {13, 14, 15, 16}};
 
   printMatrix(a);
   printMatrix(b);

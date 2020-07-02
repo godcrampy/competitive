@@ -1,21 +1,14 @@
 #include "Account.hpp"
+
 #include <iostream>
 
-double Account::get_balance() {
-  return balance;
-}
+double Account::get_balance() { return balance; }
 
-void Account::set_balance(double balance) {
-  this->balance = balance;
-}
+void Account::set_balance(double balance) { this->balance = balance; }
 
-std::string Account::get_name() {
-  return this->name;
-}
+std::string Account::get_name() { return this->name; }
 
-void Account::set_name(const std::string &name) {
-  this->name = name;
-}
+void Account::set_name(const std::string &name) { this->name = name; }
 
 bool Account::deposit(double amount) {
   if (amount > 10000) {

@@ -35,7 +35,10 @@ int main(int argc, char const *argv[]) {
     auto p = getAandB(vec, i);
     int a = p.first;
     int b = p.second;
-    count = (count + ((k * a) % alpha + (((((k) * (k - 1)) / 2) % alpha) * b) % alpha) % alpha) % alpha;
+    count = (count +
+             ((k * a) % alpha + (((((k) * (k - 1)) / 2) % alpha) * b) % alpha) %
+                 alpha) %
+            alpha;
   }
 
   cout << count % alpha << endl;

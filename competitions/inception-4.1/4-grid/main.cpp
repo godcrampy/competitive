@@ -1,11 +1,14 @@
 #include <limits.h>
+
 #include <cmath>
 #include <iostream>
 #include <vector>
 
 using namespace std;
 
-int number_of_steps_rec(vector<vector<int>> &board, vector<vector<bool>> &visited, int x, int y, bool power, char under) {
+int number_of_steps_rec(vector<vector<int>> &board,
+                        vector<vector<bool>> &visited, int x, int y, bool power,
+                        char under) {
   int r = board.size();
   int c = board[0].size();
   if (x == c || y == r || visited[x][y] == true) {

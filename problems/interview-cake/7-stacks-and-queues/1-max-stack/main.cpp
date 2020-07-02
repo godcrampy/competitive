@@ -26,7 +26,5 @@ class MaxStack {
     return res;
   }
 
-  int getMax() const {
-    return maxStack.top();
-  }
+  int getMax() const { return maxStack.top(); }
 };

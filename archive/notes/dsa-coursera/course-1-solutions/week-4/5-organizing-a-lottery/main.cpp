@@ -6,9 +6,7 @@
 
 using namespace std;
 
-bool smaller(pair<int, char> a, pair<int, char> b) {
-  return a.first < b.first;
-}
+bool smaller(pair<int, char> a, pair<int, char> b) { return a.first < b.first; }
 
 auto points_frequency(vector<long> points, vector<pair<long, long>> segments) {
   int s = segments.size();
@@ -23,8 +21,7 @@ auto points_frequency(vector<long> points, vector<pair<long, long>> segments) {
   }
   sort(points_map.begin(), points_map.end(), smaller);
   map<long, int> frequence_count;
-  for (auto point : points)
-    frequence_count.insert({point, 0});
+  for (auto point : points) frequence_count.insert({point, 0});
   int depth = 0;
   for (auto point : points_map) {
     switch (point.second) {
@@ -40,8 +37,7 @@ auto points_frequency(vector<long> points, vector<pair<long, long>> segments) {
         break;
     }
   }
-  for (auto point : points)
-    cout << frequence_count[point] << " ";
+  for (auto point : points) cout << frequence_count[point] << " ";
   cout << endl;
 }
 

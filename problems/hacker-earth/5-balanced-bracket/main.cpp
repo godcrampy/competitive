@@ -5,12 +5,11 @@
 
 using namespace std;
 
-bool is_opening_bracket(char c) {
-  return c == '{' || c == '(' || c == '[';
-}
+bool is_opening_bracket(char c) { return c == '{' || c == '(' || c == '['; }
 
 bool are_pairs(char a, char b) {
-  return (a == '[' && b == ']') || (a == '(' && b == ')') || (a == '{' && b == '}');
+  return (a == '[' && b == ']') || (a == '(' && b == ')') ||
+         (a == '{' && b == '}');
 }
 
 int main(int argc, char const *argv[]) {

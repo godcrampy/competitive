@@ -5,8 +5,7 @@
 
 int get_power_LSB(int base, int index) {
   int final = 1;
-  for (int i = 0; i < index; i++)
-    final *= base;
+  for (int i = 0; i < index; i++) final *= base;
   return final % 10;
 }
 

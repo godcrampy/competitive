@@ -18,7 +18,8 @@ struct Vertex {
 
 void update(Vertex* v) {
   if (v == NULL) return;
-  v->sum = v->key + (v->left != NULL ? v->left->sum : 0ll) + (v->right != NULL ? v->right->sum : 0ll);
+  v->sum = v->key + (v->left != NULL ? v->left->sum : 0ll) +
+           (v->right != NULL ? v->right->sum : 0ll);
   if (v->left != NULL) {
     v->left->parent = v;
   }
@@ -203,12 +204,14 @@ int main() {
       case '?': {
         int x;
         scanf("%d", &x);
-        printf(find((x + last_sum_result) % MODULO) ? "Found\n" : "Not found\n");
+        printf(find((x + last_sum_result) % MODULO) ? "Found\n"
+                                                    : "Not found\n");
       } break;
       case 's': {
         int l, r;
         scanf("%d %d", &l, &r);
-        long long res = sum((l + last_sum_result) % MODULO, (r + last_sum_result) % MODULO);
+        long long res =
+            sum((l + last_sum_result) % MODULO, (r + last_sum_result) % MODULO);
         printf("%lld\n", res);
         last_sum_result = int(res % MODULO);
       }

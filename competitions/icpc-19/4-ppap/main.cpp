@@ -4,7 +4,8 @@
 #include <string>
 #include <vector>
 
-void print_answer(const std::string &string, std::vector<std::set<char>> all_the_ps) {
+void print_answer(const std::string &string,
+                  std::vector<std::set<char>> all_the_ps) {
   for (int i = 0; i < string.length(); ++i) {
     int length_to_check = 1;
     std::set<char> working_p;

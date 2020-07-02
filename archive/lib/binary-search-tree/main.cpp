@@ -49,8 +49,7 @@ void BST::insert(int data) {
 }
 
 void BST::inorder_traversal() {
-  if (this->root == nullptr)
-    return;
+  if (this->root == nullptr) return;
   stack<Node *> stack;
   Node *iterator = this->root;
   while (true) {
@@ -58,8 +57,7 @@ void BST::inorder_traversal() {
       stack.push(iterator);
       iterator = iterator->left;
     } else {
-      if (stack.empty())
-        break;
+      if (stack.empty()) break;
       iterator = stack.top();
       stack.pop();
       cout << iterator->data << " ";
@@ -76,10 +74,8 @@ void BST::preorder_traversal() {
     auto temp = stack.top();
     cout << temp->data << " ";
     stack.pop();
-    if (temp->right != nullptr)
-      stack.push(temp->right);
-    if (temp->left != nullptr)
-      stack.push(temp->left);
+    if (temp->right != nullptr) stack.push(temp->right);
+    if (temp->left != nullptr) stack.push(temp->left);
   }
   cout << endl;
 }
@@ -91,10 +87,8 @@ void BST::postorder_traversal() {
     auto temp = stack1.top();
     stack1.pop();
     stack2.push(temp);
-    if (temp->left != nullptr)
-      stack1.push(temp->left);
-    if (temp->right != nullptr)
-      stack1.push(temp->right);
+    if (temp->left != nullptr) stack1.push(temp->left);
+    if (temp->right != nullptr) stack1.push(temp->right);
   }
   while (!stack2.empty()) {
     cout << stack2.top()->data << " ";

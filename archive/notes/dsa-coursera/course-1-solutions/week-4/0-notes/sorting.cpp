@@ -1,11 +1,11 @@
 #include <stdlib.h>
+
 #include <iostream>
 #include <vector>
 
 template <class T>
 void print_vector(std::vector<T> vector) {
-  for (auto item : vector)
-    std::cout << item << " ";
+  for (auto item : vector) std::cout << item << " ";
   std::cout << std::endl;
 }
 
@@ -23,8 +23,7 @@ void selection_sort(std::vector<T> &vector) {
     // i is the first element of unsorted part
     int min_index = i;
     for (auto j = i + 1; j < length; ++j)
-      if (vector[j] < vector[min_index])
-        min_index = j;
+      if (vector[j] < vector[min_index]) min_index = j;
     swap(vector[i], vector[min_index]);
   }
 }
@@ -34,8 +33,7 @@ void bubble_sort(std::vector<T> &vector) {
   auto length = vector.size();
   for (auto i = 0; i < length; ++i)
     for (int j = 0; j < length - i - 1; ++j)
-      if (vector[j] > vector[j + 1])
-        swap(vector[j], vector[j + 1]);
+      if (vector[j] > vector[j + 1]) swap(vector[j], vector[j + 1]);
 }
 
 template <class T>
@@ -68,8 +66,7 @@ void _merge(std::vector<T> &vector, int start, int mid, int end) {
 
 template <class T>
 void _merge_sort(std::vector<T> &vector, int start, int end) {
-  if (start == end)
-    return;
+  if (start == end) return;
   int mid = (start + end) / 2;
   _merge_sort(vector, start, mid);
   _merge_sort(vector, mid + 1, end);
@@ -97,8 +94,7 @@ int partition(std::vector<T> &vector, int start, int end) {
 
 template <class T>
 void _quick_sort(std::vector<T> &vector, int start, int end) {
-  if (start >= end)
-    return;
+  if (start >= end) return;
   int mid = partition(vector, start, end);
   _quick_sort(vector, start, mid - 1);
   _quick_sort(vector, mid + 1, end);
@@ -112,8 +108,7 @@ void quick_sort(std::vector<T> &vector) {
 int main(int argc, char const *argv[]) {
   int n = 10;
   std::vector<int> a;
-  for (auto i = 0; i < n; ++i)
-    a.push_back(rand() % 100 + 1);
+  for (auto i = 0; i < n; ++i) a.push_back(rand() % 100 + 1);
   print_vector(a);
   quick_sort(a);
   print_vector(a);

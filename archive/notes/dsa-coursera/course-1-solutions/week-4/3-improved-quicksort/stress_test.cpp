@@ -48,16 +48,14 @@ std::pair<int, int> fast_partition(std::vector<long> &vector, int l, int r) {
 }
 
 void fast_quick_sort(std::vector<long> &vector, int l, int r) {
-  if (l >= r)
-    return;
+  if (l >= r) return;
   auto positions = fast_partition(vector, l, r);
   fast_quick_sort(vector, l, positions.first - 1);
   fast_quick_sort(vector, positions.second + 1, r);
 }
 
 void quick_sort(std::vector<long> &vector, int l, int r) {
-  if (l >= r)
-    return;
+  if (l >= r) return;
   int mid = partition(vector, l, r);
   quick_sort(vector, l, mid - 1);
   quick_sort(vector, mid + 1, r);
@@ -74,12 +72,9 @@ int main(int argc, char const *argv[]) {
     quick_sort(test, 0, test.size() - 1);
     fast_quick_sort(second, 0, second.size() - 1);
     // bubble_sort(test);
-    for (auto number : test)
-      std::cout
-          << number << " ";
+    for (auto number : test) std::cout << number << " ";
     std::cout << std::endl;
-    if (test != second)
-      break;
+    if (test != second) break;
   }
   return 0;
 }

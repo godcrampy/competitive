@@ -8,8 +8,7 @@ class MaxStack {
 
  public:
   void pop() {
-    if (this->main_stack.top() == this->aux_stack.top())
-      this->aux_stack.pop();
+    if (this->main_stack.top() == this->aux_stack.top()) this->aux_stack.pop();
     this->main_stack.pop();
   }
   void push(int number) {
@@ -17,9 +16,7 @@ class MaxStack {
     if (this->aux_stack.empty() || number >= this->aux_stack.top())
       this->aux_stack.push(number);
   }
-  int max() {
-    return aux_stack.top();
-  }
+  int max() { return aux_stack.top(); }
 };
 
 int main(int argc, char const *argv[]) {

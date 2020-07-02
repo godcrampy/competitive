@@ -3,8 +3,7 @@
 
 template <class T>
 auto binary_search(std::vector<T> vector, T key, int low = 0, int high = 0) {
-  if (high < low)
-    return -1;
+  if (high < low) return -1;
   int mid = (low + high) / 2;
   if (vector[mid] == key)
     return mid;

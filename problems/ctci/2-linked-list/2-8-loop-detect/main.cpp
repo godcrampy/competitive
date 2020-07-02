@@ -63,7 +63,8 @@ ListNode* getLoopStart(ListNode* head) {
 int main(int argc, char const* argv[]) {
   vector<int> v = {1, 2, 3, 4, 5};
   auto head = arrayToList(v);
-  head->next->next->next->next->next = head->next->next;  // five and three connected
+  head->next->next->next->next->next =
+      head->next->next;  // five and three connected
   cout << getLoopStart(head)->val << endl;
   return 0;
 }

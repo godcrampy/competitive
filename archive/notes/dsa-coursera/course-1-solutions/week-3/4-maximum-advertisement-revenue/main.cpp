@@ -6,8 +6,7 @@ long long maximum_sum(std::vector<long> a, std::vector<long> b) {
   std::sort(a.begin(), a.end());
   std::sort(b.begin(), b.end());
   long long sum = 0;
-  for (auto i = 0; i < a.size(); ++i)
-    sum += a[i] * b[i];
+  for (auto i = 0; i < a.size(); ++i) sum += a[i] * b[i];
   return sum;
 }
 

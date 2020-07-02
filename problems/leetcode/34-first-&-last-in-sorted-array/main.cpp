@@ -7,15 +7,13 @@ using namespace std;
 vector<int> searchRangeSTL(vector<int>& nums, int target) {
   int i1 = lower_bound(nums.begin(), nums.end(), target) - nums.begin();
   int i2 = upper_bound(nums.begin(), nums.end(), target) - nums.begin() - 1;
-  if (binary_search(nums.begin(), nums.end(), target))
-    return {i1, i2};
+  if (binary_search(nums.begin(), nums.end(), target)) return {i1, i2};
   return {-1, -1};
 }
 
 // without stl
 vector<int> searchRange(vector<int>& nums, int target) {
-  if (nums.size() == 0)
-    return {-1, -1};
+  if (nums.size() == 0) return {-1, -1};
   int l = 0;
   int r = nums.size() - 1;
   vector<int> result = {-1, -1};

@@ -9,8 +9,7 @@ typedef struct node {
 std::vector<int> dfs(node node) {
   static std::vector<int> list = {};
   if (node.children.size() != 0) {
-    for (auto child : node.children)
-      dfs(*child);
+    for (auto child : node.children) dfs(*child);
   }
   list.push_back(node.data);
   return list;

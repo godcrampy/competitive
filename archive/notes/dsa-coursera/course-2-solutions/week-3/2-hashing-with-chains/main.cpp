@@ -25,7 +25,8 @@ int main(int argc, char const *argv[]) {
     } else if (query == "find") {
       find(table, input, hash_func(input, m));
     } else {
-      for (auto itr = table[stoll(input)].rbegin(); itr != table[stoll(input)].rend(); ++itr) {
+      for (auto itr = table[stoll(input)].rbegin();
+           itr != table[stoll(input)].rend(); ++itr) {
         cout << *itr << " ";
       }
       cout << endl;

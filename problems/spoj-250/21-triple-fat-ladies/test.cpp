@@ -2,6 +2,7 @@
 #include <map>
 #include <string>
 #include <vector>
+
 #include "util.hpp"
 
 bool does_cube_end_with_888(long long number) {

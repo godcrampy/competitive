@@ -49,11 +49,12 @@ bool palindromePermutationBit(string &s) {
     }
   }
 
-  return !(u & (u - 1)); // is power of 2 including 0
+  return !(u & (u - 1));  // is power of 2 including 0
 }
 
 int main(int argc, char const *argv[]) {
   string s = "cc";
-  cout << palindromePermutationSet(s) << " " << palindromePermutationBit(s) << endl;
+  cout << palindromePermutationSet(s) << " " << palindromePermutationBit(s)
+       << endl;
   return 0;
 }

@@ -3,8 +3,7 @@
 
 long merge(std::vector<long> &vector, int l, int m, int r) {
   std::vector<int> temp(r - l + 1, 0);
-  for (auto i = l; i <= r; ++i)
-    temp[i - l] = vector[i];
+  for (auto i = l; i <= r; ++i) temp[i - l] = vector[i];
   long count = 0;
   int iterator1 = l;
   int iterator2 = m + 1;
@@ -34,8 +33,7 @@ long merge(std::vector<long> &vector, int l, int m, int r) {
 }
 
 long merge_sort(std::vector<long> &vector, int l, int r) {
-  if (l >= r)
-    return 0;
+  if (l >= r) return 0;
   int mid = (l + r) / 2;
   long count = 0;
   count += merge_sort(vector, l, mid);

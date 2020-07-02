@@ -11,10 +11,7 @@ class BinaryTreeNode {
   BinaryTreeNode* left_;
   BinaryTreeNode* right_;
 
-  BinaryTreeNode(int value) : value_(value),
-                              left_(nullptr),
-                              right_(nullptr) {
-  }
+  BinaryTreeNode(int value) : value_(value), left_(nullptr), right_(nullptr) {}
 
   ~BinaryTreeNode() {
     delete left_;
@@ -37,7 +34,8 @@ bool isBST(const BinaryTreeNode* root, int low, int high) {
     return true;
   }
   int v = root->value_;
-  return (v > low && v < high) && isBST(root->left_, low, v) && isBST(root->right_, v, high);
+  return (v > low && v < high) && isBST(root->left_, low, v) &&
+         isBST(root->right_, v, high);
 }
 
 bool isBinarySearchTree(const BinaryTreeNode* root) {

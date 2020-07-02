@@ -16,7 +16,8 @@ int randomNumber(int l, int r) {
 }
 
 // ? Subarray with given sum
-// * Given an unsorted array of integers, find a continuous subarray which adds to a given number.
+// * Given an unsorted array of integers, find a continuous subarray which adds
+// to a given number.
 
 pair<int, int> naiveApproach(const vector<int>& v, int sum) {
   // * T:O(n^2) S:O(1)

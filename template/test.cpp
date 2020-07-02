@@ -20,8 +20,7 @@ void printVector(const vector<T>& v, string msg) {
   cout << endl;
 }
 
-void smokeTest() {
-}
+void smokeTest() {}
 
 int main(int argc, char const* argv[]) {
   ios_base::sync_with_stdio(false);

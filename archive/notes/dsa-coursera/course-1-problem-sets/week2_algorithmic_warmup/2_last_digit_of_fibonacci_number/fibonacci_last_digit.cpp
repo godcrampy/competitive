@@ -1,8 +1,7 @@
 #include <iostream>
 
 int get_fibonacci_last_digit_naive(int n) {
-  if (n <= 1)
-    return n;
+  if (n <= 1) return n;
 
   int previous = 0;
   int current = 1;

@@ -1,4 +1,5 @@
 #include <iostream>
+
 #include "ComplexNumber.hpp"
 ComplexNumber addNumber(ComplexNumber a, ComplexNumber b) {
   return ComplexNumber(a.real + b.real, a.complex + b.complex);

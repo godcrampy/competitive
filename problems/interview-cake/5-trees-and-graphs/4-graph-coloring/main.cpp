@@ -16,26 +16,15 @@ class GraphNode {
   string color_;
 
  public:
-  GraphNode(const string& label) : label_(label),
-                                   neighbors_(),
-                                   color_() {
-  }
+  GraphNode(const string& label) : label_(label), neighbors_(), color_() {}
 
-  const string& getLabel() const {
-    return label_;
-  }
+  const string& getLabel() const { return label_; }
 
-  const unordered_set<GraphNode*> getNeighbors() const {
-    return neighbors_;
-  }
+  const unordered_set<GraphNode*> getNeighbors() const { return neighbors_; }
 
-  void addNeighbor(GraphNode& neighbor) {
-    neighbors_.insert(&neighbor);
-  }
+  void addNeighbor(GraphNode& neighbor) { neighbors_.insert(&neighbor); }
 
-  bool hasColor() const {
-    return !color_.empty();
-  }
+  bool hasColor() const { return !color_.empty(); }
 
   const string& getColor() const {
     if (hasColor()) {
@@ -45,9 +34,7 @@ class GraphNode {
     }
   }
 
-  void setColor(const string& color) {
-    color_ = color;
-  }
+  void setColor(const string& color) { color_ = color; }
 };
 
 void colorGraph(const vector<GraphNode*>& graph, const vector<string>& colors) {

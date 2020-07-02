@@ -18,7 +18,8 @@ void nullifyColumn(vector<vector<int>> &m, int x) {
 void nullifyMatrix(vector<vector<int>> &m) {
   // * Time: O(m*n)
   // * Space: O(m + n)
-  // * If matrix was of only ones and zeroes, we ould have used the first row and first column instead of new vectors
+  // * If matrix was of only ones and zeroes, we ould have used the first row
+  // and first column instead of new vectors
   if (m.size() == 0) return;
   vector<bool> rowsZero(m.size(), false);        // which rows to zero
   vector<bool> columnsZero(m[0].size(), false);  // which columns to zero
@@ -52,10 +53,7 @@ void printMatrix(const vector<vector<int>> &m) {
 }
 
 int main(int argc, char const *argv[]) {
-  vector<vector<int>> m = {{1, 0, 1},
-                           {1, 1, 1},
-                           {1, 1, 0},
-                           {1, 1, 1}};
+  vector<vector<int>> m = {{1, 0, 1}, {1, 1, 1}, {1, 1, 0}, {1, 1, 1}};
 
   printMatrix(m);
   nullifyMatrix(m);

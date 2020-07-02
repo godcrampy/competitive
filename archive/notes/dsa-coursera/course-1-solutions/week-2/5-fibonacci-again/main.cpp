@@ -9,8 +9,7 @@ long pisano_period(long number) {
   cache.push_back(1);
   for (auto i = 2; i < number * number; ++i) {
     cache.push_back((cache[i - 1] + cache[i - 2]) % number);
-    if (cache[i] == 1 && cache[i - 1] == 0)
-      return i - 1;
+    if (cache[i] == 1 && cache[i - 1] == 0) return i - 1;
   }
   return 1;
 }

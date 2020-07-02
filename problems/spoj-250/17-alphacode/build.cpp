@@ -2,19 +2,14 @@
 #include <map>
 #include <string>
 
-int char_to_int(char c) {
-  return c - '0';
-}
+int char_to_int(char c) { return c - '0'; }
 
 long long get_number_of_decodings(const std::string &message) {
   static std::map<std::string, long long> cache;
   long long final;
-  if (message.length() == 0)
-    return 1;
-  if (message.at(0) == '0')
-    return 0;
-  if (message.length() == 1)
-    return 1;
+  if (message.length() == 0) return 1;
+  if (message.at(0) == '0') return 0;
+  if (message.length() == 1) return 1;
   if (cache.count(message)) {
     // there is cache
     return cache[message];
@@ -25,7 +20,8 @@ long long get_number_of_decodings(const std::string &message) {
     cache.insert({message, final});
     return final;
   }
-  final = get_number_of_decodings(message.substr(2, message.length() - 2)) + get_number_of_decodings(message.substr(1, message.length() - 1));
+  final = get_number_of_decodings(message.substr(2, message.length() - 2)) +
+          get_number_of_decodings(message.substr(1, message.length() - 1));
   cache.insert({message, final});
   return final;
 }
@@ -34,8 +30,7 @@ int main() {
   while (true) {
     std::string a;
     std::getline(std::cin, a);
-    if (a == "0")
-      break;
+    if (a == "0") break;
     std::cout << get_number_of_decodings(a) << std::endl;
   }
 }

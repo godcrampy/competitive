@@ -26,8 +26,7 @@ vector<Query> read_queries() {
 }
 
 void write_responses(const vector<string>& result) {
-  for (size_t i = 0; i < result.size(); ++i)
-    std::cout << result[i] << "\n";
+  for (size_t i = 0; i < result.size(); ++i) std::cout << result[i] << "\n";
 }
 
 vector<string> process_queries(const vector<Query>& queries) {
@@ -46,8 +45,7 @@ vector<string> process_queries(const vector<Query>& queries) {
           break;
         }
       // otherwise, just add it
-      if (!was_founded)
-        contacts.push_back(queries[i]);
+      if (!was_founded) contacts.push_back(queries[i]);
     } else if (queries[i].type == "del") {
       for (size_t j = 0; j < contacts.size(); ++j)
         if (contacts[j].number == queries[i].number) {

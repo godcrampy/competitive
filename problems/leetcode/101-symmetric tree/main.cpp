@@ -26,7 +26,8 @@ bool is_sym(TreeNode* a, TreeNode* b) {
     return false;
   }
 
-  return a->val == b->val & is_sym(a->left, b->right) & is_sym(a->right, b->left);
+  return a->val == b->val & is_sym(a->left, b->right) &
+         is_sym(a->right, b->left);
 }
 
 bool isSymmetricIterative(TreeNode* root) {
@@ -44,10 +45,8 @@ bool isSymmetricIterative(TreeNode* root) {
     if (s.empty()) return false;
     TreeNode* b = s.top();
     s.pop();
-    if (a == NULL && b == NULL)
-      continue;
-    if (a == NULL || b == NULL || a->val != b->val)
-      return false;
+    if (a == NULL && b == NULL) continue;
+    if (a == NULL || b == NULL || a->val != b->val) return false;
     s.push(a->left);
     s.push(b->right);
     s.push(a->right);

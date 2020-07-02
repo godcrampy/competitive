@@ -16,8 +16,7 @@ Data read_input() {
 }
 
 void print_occurrences(const std::vector<int>& output) {
-  for (size_t i = 0; i < output.size(); ++i)
-    std::cout << output[i] << " ";
+  for (size_t i = 0; i < output.size(); ++i) std::cout << output[i] << " ";
   std::cout << "\n";
 }
 
@@ -25,8 +24,7 @@ std::vector<int> get_occurrences(const Data& input) {
   const string &s = input.pattern, t = input.text;
   std::vector<int> ans;
   for (size_t i = 0; i + s.size() <= t.size(); ++i)
-    if (t.substr(i, s.size()) == s)
-      ans.push_back(i);
+    if (t.substr(i, s.size()) == s) ans.push_back(i);
   return ans;
 }
 

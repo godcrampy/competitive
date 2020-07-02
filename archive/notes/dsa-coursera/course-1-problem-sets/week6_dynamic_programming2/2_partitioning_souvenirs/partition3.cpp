@@ -4,7 +4,7 @@
 using std::vector;
 
 int partition3(vector<int> &A) {
-  //write your code here
+  // write your code here
   return 0;
 }
 

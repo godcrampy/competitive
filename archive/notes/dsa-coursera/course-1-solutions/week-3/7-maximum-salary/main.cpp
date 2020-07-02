@@ -30,8 +30,7 @@ double rank(int number) {
 
 void print_salary(std::vector<pair> &numbers) {
   std::sort(numbers.begin(), numbers.end(), lesser);
-  for (auto pair : numbers)
-    std::cout << pair.first;
+  for (auto pair : numbers) std::cout << pair.first;
   std::cout << std::endl;
 }
 

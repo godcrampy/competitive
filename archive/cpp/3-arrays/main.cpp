@@ -4,8 +4,7 @@
 using namespace std;
 
 void printVector(vector<int> vector) {
-  for (auto i = vector.begin(); i != vector.end(); ++i)
-    cout << *i << " ";
+  for (auto i = vector.begin(); i != vector.end(); ++i) cout << *i << " ";
   cout << endl;
 }
 
@@ -17,8 +16,7 @@ void initializeVector(vector<int> &a) {
 }
 
 void printReverse(vector<int> a) {
-  for (auto i = a.rbegin(); i != a.rend(); ++i)
-    cout << *i << " ";
+  for (auto i = a.rbegin(); i != a.rend(); ++i) cout << *i << " ";
   cout << endl;
 }
 

@@ -21,9 +21,16 @@ void printVector(const vector<T>& v, string msg) {
   cout << endl;
 }
 
-// ? Given arrival and departure times of all trains that reach a railway station. Your task is to find the minimum number of platforms required for the railway station so that no train waits.
+// ? Given arrival and departure times of all trains that reach a railway
+// station. Your task is to find the minimum number of platforms required for
+// the railway station so that no train waits.
 
-// ? Note: Consider that all the trains arrive on the same day and leave on the same day. Also, arrival and departure times will not be same for a train, but we can have arrival time of one train equal to departure of the other. In such cases, we need different platforms, i.e at any given instance of time, same platform can not be used for both departure of a train and arrival of another.
+// ? Note: Consider that all the trains arrive on the same day and leave on the
+// same day. Also, arrival and departure times will not be same for a train, but
+// we can have arrival time of one train equal to departure of the other. In
+// such cases, we need different platforms, i.e at any given instance of time,
+// same platform can not be used for both departure of a train and arrival of
+// another.
 
 int setApproach(vector<int> arrival, vector<int> departure) {
   // * T:O(nlogn) S:O(n)
@@ -81,7 +88,8 @@ int dualSortApproach(vector<int> arrival, vector<int> departure) {
 
 int vectorApproach(vector<int> arrival, vector<int> departure) {
   // * T:O(n) S:O(1)
-  vector<int> platform(2361, 0);  // minutes in a day, basically max element value in arrival, departure
+  vector<int> platform(2361, 0);  // minutes in a day, basically max element
+                                  // value in arrival, departure
   int n = arrival.size();
   for (int i = 0; i < n; ++i) {
     platform[arrival[i]]++;

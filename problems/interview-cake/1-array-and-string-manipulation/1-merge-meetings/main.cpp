@@ -13,29 +13,18 @@ class Meeting {
   unsigned int endTime_;
 
  public:
-  Meeting() : startTime_(0),
-              endTime_(0) {
-  }
+  Meeting() : startTime_(0), endTime_(0) {}
 
-  Meeting(unsigned int startTime, unsigned int endTime) : startTime_(startTime),
-                                                          endTime_(endTime) {
-  }
+  Meeting(unsigned int startTime, unsigned int endTime)
+      : startTime_(startTime), endTime_(endTime) {}
 
-  unsigned int getStartTime() const {
-    return startTime_;
-  }
+  unsigned int getStartTime() const { return startTime_; }
 
-  void setStartTime(unsigned int startTime) {
-    startTime_ = startTime;
-  }
+  void setStartTime(unsigned int startTime) { startTime_ = startTime; }
 
-  unsigned int getEndTime() const {
-    return endTime_;
-  }
+  unsigned int getEndTime() const { return endTime_; }
 
-  void setEndTime(unsigned int endTime) {
-    endTime_ = endTime;
-  }
+  void setEndTime(unsigned int endTime) { endTime_ = endTime; }
 
   bool operator==(const Meeting& other) const {
     return startTime_ == other.startTime_ && endTime_ == other.endTime_;
@@ -46,9 +35,8 @@ vector<Meeting> mergeRanges(const vector<Meeting>& meetings) {
   // merge meeting ranges
   // sort meetings
   vector<Meeting> sortedMeetings(meetings);
-  sort(sortedMeetings.begin(), sortedMeetings.end(), [](auto a, auto b) {
-    return a.getStartTime() < b.getStartTime();
-  });
+  sort(sortedMeetings.begin(), sortedMeetings.end(),
+       [](auto a, auto b) { return a.getStartTime() < b.getStartTime(); });
 
   vector<Meeting> mergedMeetings;
   mergedMeetings.push_back(sortedMeetings.front());
@@ -56,8 +44,8 @@ vector<Meeting> mergeRanges(const vector<Meeting>& meetings) {
   for (const auto& meeting : sortedMeetings) {
     auto& lastMeeting = mergedMeetings.back();
     if (lastMeeting.getEndTime() >= meeting.getStartTime()) {
-      lastMeeting.setEndTime(max(
-          meeting.getEndTime(), lastMeeting.getEndTime()));
+      lastMeeting.setEndTime(
+          max(meeting.getEndTime(), lastMeeting.getEndTime()));
     } else {
       mergedMeetings.push_back(meeting);
     }
@@ -105,7 +93,8 @@ vector<Meeting> mergeRanges(const vector<Meeting>& meetings) {
 // ,
 
 //     {CASE("multiple merged meetings"){
-//         const auto meetings = vector<Meeting>{Meeting(1, 4), Meeting(2, 5), Meeting(5, 8)};
+//         const auto meetings = vector<Meeting>{Meeting(1, 4), Meeting(2, 5),
+//         Meeting(5, 8)};
 // const auto actual = mergeRanges(meetings);
 // const auto expected = vector<Meeting>{Meeting(1, 8)};
 // EXPECT(actual == expected);
@@ -114,7 +103,8 @@ vector<Meeting> mergeRanges(const vector<Meeting>& meetings) {
 // ,
 
 //     {CASE("meetings not sorted"){
-//         const auto meetings = vector<Meeting>{Meeting(5, 8), Meeting(1, 4), Meeting(6, 8)};
+//         const auto meetings = vector<Meeting>{Meeting(5, 8), Meeting(1, 4),
+//         Meeting(6, 8)};
 // const auto actual = mergeRanges(meetings);
 // const auto expected = vector<Meeting>{Meeting(1, 4), Meeting(5, 8)};
 // EXPECT(actual == expected);
@@ -123,8 +113,10 @@ vector<Meeting> mergeRanges(const vector<Meeting>& meetings) {
 // ,
 
 //     {CASE("one long meeting contains smaller meetings"){
-//         const auto meetings = vector<Meeting>{Meeting(1, 10), Meeting(2, 5), Meeting(6, 8),
-//                                               Meeting(9, 10), Meeting(10, 12)};
+//         const auto meetings = vector<Meeting>{Meeting(1, 10), Meeting(2, 5),
+//         Meeting(6, 8),
+//                                               Meeting(9, 10), Meeting(10,
+//                                               12)};
 // const auto actual = mergeRanges(meetings);
 // const auto expected = vector<Meeting>{Meeting(1, 12)};
 // EXPECT(actual == expected);
@@ -133,11 +125,13 @@ vector<Meeting> mergeRanges(const vector<Meeting>& meetings) {
 // ,
 
 //     {CASE("sample input"){
-//         const auto meetings = vector<Meeting>{Meeting(0, 1), Meeting(3, 5), Meeting(4, 8),
-//                                               Meeting(10, 12), Meeting(9, 10)};
+//         const auto meetings = vector<Meeting>{Meeting(0, 1), Meeting(3, 5),
+//         Meeting(4, 8),
+//                                               Meeting(10, 12), Meeting(9,
+//                                               10)};
 // const auto actual = mergeRanges(meetings);
-// const auto expected = vector<Meeting>{Meeting(0, 1), Meeting(3, 8), Meeting(9, 12)};
-// EXPECT(actual == expected);
+// const auto expected = vector<Meeting>{Meeting(0, 1), Meeting(3, 8),
+// Meeting(9, 12)}; EXPECT(actual == expected);
 // }
 // }
 // ,

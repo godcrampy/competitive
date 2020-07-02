@@ -22,7 +22,8 @@ bool validateBst(TreeNode* root, int min, int max) {
 
   if (root->val <= min || root->val >= max) return false;
 
-  return validateBst(root->left, min, root->val) && validateBst(root->right, root->val, max);
+  return validateBst(root->left, min, root->val) &&
+         validateBst(root->right, root->val, max);
 }
 
 bool isValidBST(TreeNode* root) {

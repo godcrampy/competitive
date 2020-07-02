@@ -13,9 +13,7 @@ class QueueTwoStacks {
   stack<int> outStack_;
 
  public:
-  void enqueue(int item) {
-    inStack_.push(item);
-  }
+  void enqueue(int item) { inStack_.push(item); }
 
   int dequeue() {
     if (outStack_.empty()) {

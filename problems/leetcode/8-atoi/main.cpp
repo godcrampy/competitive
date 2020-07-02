@@ -1,15 +1,12 @@
 #include <limits.h>
+
 #include <string>
 
 using namespace std;
 
-bool is_digit(char c) {
-  return c >= '0' && c <= '9';
-}
+bool is_digit(char c) { return c >= '0' && c <= '9'; }
 
-int to_digit(char c) {
-  return c - '0';
-}
+int to_digit(char c) { return c - '0'; }
 
 int myAtoi(string str) {
   int i = 0;

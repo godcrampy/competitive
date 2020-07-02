@@ -19,7 +19,10 @@ void printVector(const vector<int>& v, string msg) {
   cout << endl;
 }
 
-// ? Given an array of positive integers. Your task is to rearrange  the array elements alternatively i.e first element should be max value, second should be min value, third should be second max, fourth should be second min and so on...
+// ? Given an array of positive integers. Your task is to rearrange  the array
+// elements alternatively i.e first element should be max value, second should
+// be min value, third should be second max, fourth should be second min and so
+// on...
 
 void naiveApproach(vector<int>& v) {
   // * T:O(n^2) S:O(1)
