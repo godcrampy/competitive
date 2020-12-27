@@ -6,63 +6,40 @@ using namespace std;
 #define deb2(x, y) cout << #x << " = " << x << ", " << #y << " = " << y << endl
 const long mod = 1000000007;
 
-bool equalArray(vector<ll> &v) {
-  if (v.size() <= 1)
-    return true;
-  ll first = v[0];
-
-  for (ll i : v) {
-    if (i != first)
-      return false;
-  }
-  return true;
-}
-
 void solve() {
-  ll n;
+  ll n, sum = 0;
   cin >> n;
+
   vector<ll> v(n, 0);
 
   for (ll i = 0; i < n; ++i) {
     cin >> v[i];
+    sum += v[i];
   }
 
-  ll steps = 0;
+  for (ll i = n; i >= 1; --i) {
+    // i is possible size of final array
+    if (sum % i == 0) {
+      ll reqSum = sum / i;
+      ll currSum = 0;
+      bool found = true;
 
-  while (!equalArray(v)) {
-    // find smallest pair
-    ll smallest = v[0];
-    ll smallestIndex = 0;
-    for (ll i = 0; i < v.size() - 1; ++i) {
-      if (v[i] < smallest) {
-        smallest = v[i];
-        smallestIndex = i;
+      for (ll j = 0; j < n; ++j) {
+        currSum += v[j];
+        if (currSum > reqSum) {
+          found = false;
+          break;
+        } else if (currSum == reqSum) {
+          currSum = 0;
+        }
+      }
+
+      if (found) {
+        cout << n - i << "\n";
+        return;
       }
     }
-
-    // merge smallest pair
-    steps++;
-    if (smallestIndex == 0) {
-      v[smallestIndex + 1] += v[smallestIndex];
-      v.erase(v.begin());
-      continue;
-    }
-    if (smallestIndex == v.size() - 1) {
-      v[smallestIndex - 1] += v[smallestIndex];
-      v.pop_back();
-      continue;
-    }
-    ll nextMin = v[smallestIndex - 1];
-    ll nextMinIndex = smallestIndex - 1;
-
-    if (v[smallestIndex + 1] < nextMin) {
-      nextMin = v[smallestIndex + 1];
-      nextMinIndex = smallestIndex + 1;
-    }
-    v[smallestIndex] += nextMin;
-    v.erase(v.begin() + nextMinIndex);
   }
-  cout << steps << "\n";
 }
 
 int main(int argc, char const *argv[]) {

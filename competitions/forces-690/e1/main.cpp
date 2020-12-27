@@ -7,30 +7,36 @@ using namespace std;
 const long mod = 1000000007;
 
 void solve() {
-  ll n;
+  ll n, temp;
   cin >> n;
 
-  vector<ll> v(n, 0);
+  vector<ll> m(n + 2, 0); // number => frequency
 
   for (ll i = 0; i < n; ++i) {
-    cin >> v[i];
+    cin >> temp;
+    m[temp]++;
   }
 
   ll count = 0;
 
-  sort(v.begin(), v.end());
-
-  ll i = 0, j = n - 1;
-
-  while (i < j - 1) {
-    if (v[j] - v[i] <= 2) {
-      count += j - i - 1;
-      --j;
-    } else {
-      ++i;
-    }
+  for (int i = 2; i < n; i++) {
+    count += m[i - 1] * m[i] * m[i + 1];
   }
-
+  for (int i = 1; i < n; i++) {
+    count += m[i] * (m[i] - 1) / 2 * m[i + 1];
+  }
+  for (int i = 2; i <= n; i++) {
+    count += m[i - 1] * m[i] * (m[i] - 1) / 2;
+  }
+  for (int i = 2; i < n; i++) {
+    count += m[i - 1] * m[i + 1] * (m[i + 1] - 1) / 2;
+  }
+  for (int i = 2; i < n; i++) {
+    count += m[i + 1] * m[i - 1] * (m[i - 1] - 1) / 2;
+  }
+  for (int i = 1; i <= n; i++) {
+    count += m[i] * (m[i] - 1) * (m[i] - 2) / 6;
+  }
   cout << count << "\n";
 }
 
