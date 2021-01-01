@@ -19,8 +19,7 @@ void solve() {
 
   while (i <= j) {
     cout << v[i++] << " ";
-    if (i <= j)
-      cout << v[j--] << " ";
+    if (i <= j) cout << v[j--] << " ";
   }
   cout << endl;
 }

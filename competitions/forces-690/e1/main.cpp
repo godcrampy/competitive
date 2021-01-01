@@ -10,7 +10,7 @@ void solve() {
   ll n, temp;
   cin >> n;
 
-  vector<ll> m(n + 2, 0); // number => frequency
+  vector<ll> m(n + 2, 0);  // number => frequency
 
   for (ll i = 0; i < n; ++i) {
     cin >> temp;
