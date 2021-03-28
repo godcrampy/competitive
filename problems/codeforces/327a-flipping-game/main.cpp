@@ -13,6 +13,32 @@ void solve() {
   for (ll i = 0; i < n; ++i) {
     cin >> v[i];
   }
+
+  ll maxOnes = -1, count = 0;
+
+  for (ll i = 0; i < n; ++i) {
+    count = 0;
+    ll prev = 0;
+    ll fin = 0;
+    for (ll j = 0; j < i; ++j) {
+      prev += v[j];
+    }
+    for (ll j = i; j < n; ++j) {
+      fin += v[j];
+    }
+
+    for (ll j = i; j < n; ++j) {
+      if (v[j] == 0) {
+        ++count;
+      } else {
+        --fin;
+      }
+
+      maxOnes = max(maxOnes, prev + count + fin);
+    }
+  }
+
+  cout << maxOnes << "\n";
 }
 
 int main(int argc, char const *argv[]) {
