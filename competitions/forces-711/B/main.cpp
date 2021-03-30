@@ -30,30 +30,34 @@ void solve() {
     ++v[rightmostSet(temp) - 1];
   }
 
-  vector<ll> size(0);
+  ll availableSpace = W;
+  ll height = 1;
 
-  for (ll i = 63; i >= 0; --i) {
-    ll num = v[i];
-    for (ll j = 0; j < num; ++j) {
-      ll w = (1 << i);
-      ll didFit = false;
+  for (ll i = 0; i < n; ++i) {
+    bool couldFit = false;
+    for (ll j = 63; j >= 0; --j) {
+      if (v[j] && (1 << j) <= availableSpace) {
+        availableSpace -= (1 << j);
+        couldFit = true;
+        --v[j];
+        break;
+      }
+    }
 
-      for (ll i = 0; i < size.size(); ++i) {
-        if (w <= size[i]) {
-          // fit
-          size[i] -= w;
-          didFit = true;
+    if (!couldFit) {
+      availableSpace = W;
+      ++height;
+      for (ll j = 63; j >= 0; --j) {
+        if (v[j] && (1 << j) <= availableSpace) {
+          availableSpace -= (1 << j);
+          --v[j];
           break;
         }
-      }
-
-      if (!didFit) {
-        size.push_back(W - w);
       }
     }
   }
 
-  cout << size.size() << "\n";
+  cout << height << "\n";
 }
 
 int main(int argc, char const* argv[]) {
